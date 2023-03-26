@@ -10,7 +10,7 @@ function set_BG(){
 }
 </script>
 
-<div class="flex flex-col justify-center w-full items-center p-4 h-screen" style="">
+<div class="flex flex-col justify-center w-full items-center p-4 h-screen my-2" style="">
     <div class="w-[300px] text-center">
         <h1 class="text-6xl text-white text-style">Marketplace Melee!</h1>
     </div>
