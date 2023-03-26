@@ -18,6 +18,30 @@ function set_BG(){
             </div>
         </div>
     </div>
+
+    <div class="flex flex row items-center justify-around w-[300px]">
+        <div class="border border-black w-[80px] p-2 outer my-2">
+            <div>
+                <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
+                    <h1 class="text-4xl text-white text-style"></h1>
+                </div>
+            </div>
+        </div>
+        <div class="border border-black w-[100px] p-2 outer my-2">
+            <div>
+                <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
+                    <h1 class="text-4xl text-white text-style">2011</h1>
+                </div>
+            </div>
+        </div>
+        <div class="border border-black w-[80px] p-2 outer my-2">
+            <div>
+                <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
+                    <h1 class="text-4xl text-white text-style"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="border border-black w-[300px] p-2 outer flex flex-wrap items-center my-2">
         <div class="flex flex-row justify-evenly">
