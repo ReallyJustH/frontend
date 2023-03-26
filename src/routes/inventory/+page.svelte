@@ -10,7 +10,7 @@ function set_BG(){
 }
 </script>
 
-<div class="flex flex-col justify-center w-full items-center p-4">
+<div class="flex flex-col justify-center w-full items-center p-4 h-screen">
     <div class="border border-black w-[300px] p-2 outer mb-2">
         <div>
             <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
