@@ -31,7 +31,7 @@ function set_BG(){
         </div>
         <h1 class="text-4xl text-white text-style self-start py-1">Pointy Stick</h1>
         <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-            <p class="box-text">
+            <p class="box-text text-white">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus ipsum quis nulla condimentum ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac erat massa.
             </p>
         </div>
@@ -51,23 +51,32 @@ function set_BG(){
         </div>
     </div>
 
-    <div class="border border-black w-[300px] p-2 outer my-2 flex flex-row">
+    <div class="border border-black w-[300px] p-2 outer my-2 flex flex-row items-center">
         <div class="border border-black w-[45px] h-[45px] mx-2">
 
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col mx-1">
             <h3 class="text-xl text-white text-style">Pebble</h3>
             <p class="box-text text-black"> Cost: 5 Value | Atk + 5</p>
         </div>
-    </div>
-
-    <div class="border border-black w-[300px] p-2 outer my-2">
-        <div>
-            <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style">Act!</h1>
-            </div>
+        <div class=" box border border-black flex justify-center p-1 w-[65px] h-[40px] items-center" style="background-color: {color} ;">
+            <h1 class="text-2xl text-white text-style">Buy</h1>
         </div>
     </div>
+
+    <div class="border border-black w-[300px] p-2 outer my-2 flex flex-row items-center">
+        <div class="border border-black w-[45px] h-[45px] mx-2">
+
+        </div>
+        <div class="flex flex-col mx-1">
+            <h3 class="text-xl text-white text-style">Pebble</h3>
+            <p class="box-text text-black"> Cost: 5 Value | Atk + 5</p>
+        </div>
+        <div class=" box border border-black flex justify-center p-1 w-[65px] h-[40px] items-center" style="background-color: {color} ;">
+            <h1 class="text-2xl text-white text-style">Buy</h1>
+        </div>
+    </div>
+
     
     <div class="border border-black w-[300px] p-2 outer my-2">
         <div>
