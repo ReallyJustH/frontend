@@ -14,7 +14,7 @@ function set_BG(){
     <div class="border border-black w-[300px] p-2 outer mb-2">
         <div>
             <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style">Shop</h1>
+                <h1 class="text-4xl text-white text-style">Inventory</h1>
             </div>
         </div>
     </div>
@@ -35,52 +35,44 @@ function set_BG(){
             </p>
         </div>
         <div class="flex flex-row w-full items-center justify-between my-2">
-            <h1 class="text-4xl text-white text-style">Cost: 15</h1>
+            <h1 class="text-4xl text-white text-style">Uses: 3</h1>
             <div class=" box border border-black flex justify-center p-1 w-[125px] h-[50px]" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style">Buy</h1>
+                <h1 class="text-4xl text-white text-style">Use</h1>
             </div>
         </div>
     </div>
    
-    <div class="border border-black w-[300px] p-2 outer my-2">
-        <div>
-            <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style">Reroll</h1>
+    <div class="border border-black w-[300px] p-2 outer my-2 flex flex-row items-center justify-evenly">
+        <div class="border border-black w-[45px] h-[45px]">
+
+        </div>
+        <div class="flex flex-col mx-1">
+            <h3 class="text-xl text-white text-style">Pebble</h3>
+            <p class="box-text text-black"> Uses: 3 | Atk + 5</p>
+        </div>
+        <div class=" box border border-black flex justify-center p-1 w-[65px] h-[40px] items-center" style="background-color: {color} ;">
+            <h1 class="text-2xl text-white text-style">Use</h1>
+        </div>
+    </div>
+
+    <div class="border border-black w-[300px] p-2 outer my-2 flex items-center justify-evenly">
+            <div class="border border-black w-[45px] h-[45px]">
+
             </div>
-        </div>
-    </div>
-
-    <div class="border border-black w-[300px] p-2 outer my-2 flex flex-row items-center">
-        <div class="border border-black w-[45px] h-[45px] mx-2">
-
-        </div>
-        <div class="flex flex-col mx-1">
-            <h3 class="text-xl text-white text-style">Pebble</h3>
-            <p class="box-text text-black"> Cost: 5 Value | Atk + 5</p>
-        </div>
-        <div class=" box border border-black flex justify-center p-1 w-[65px] h-[40px] items-center" style="background-color: {color} ;">
-            <h1 class="text-2xl text-white text-style">Buy</h1>
-        </div>
-    </div>
-
-    <div class="border border-black w-[300px] p-2 outer my-2 flex flex-row items-center">
-        <div class="border border-black w-[45px] h-[45px] mx-2">
-
-        </div>
-        <div class="flex flex-col mx-1">
-            <h3 class="text-xl text-white text-style">Pebble</h3>
-            <p class="box-text text-black"> Cost: 5 Value | Atk + 5</p>
-        </div>
-        <div class=" box border border-black flex justify-center p-1 w-[65px] h-[40px] items-center" style="background-color: {color} ;">
-            <h1 class="text-2xl text-white text-style">Buy</h1>
-        </div>
+            <div class="flex flex-col mx-1">
+                <h3 class="text-xl text-white text-style">Pebble</h3>
+                <p class="box-text text-black"> Uses: 3 | Atk + 5</p>
+            </div>
+            <div class=" box border border-black flex justify-center p-1 w-[65px] h-[40px] items-center self-end" style="background-color: {color} ;">
+                <h1 class="text-2xl text-white text-style">Use</h1>
+            </div>
     </div>
 
     
     <div class="border border-black w-[300px] p-2 outer my-2">
         <div>
             <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style">End Turn</h1>
+                <h1 class="text-4xl text-white text-style">Return</h1>
             </div>
         </div>
     </div>
