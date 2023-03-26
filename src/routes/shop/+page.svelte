@@ -35,6 +35,12 @@ function set_BG(){
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus ipsum quis nulla condimentum ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac erat massa.
             </p>
         </div>
+        <div class="flex flex-row w-full items-center justify-between my-2">
+            <h1 class="text-4xl text-white text-style">Cost: 15</h1>
+            <div class=" box border border-black flex justify-center p-1 w-[125px] h-[50px]" style="background-color: {color} ;">
+                <h1 class="text-4xl text-white text-style">Buy</h1>
+            </div>
+        </div>
     </div>
    
     <div class="border border-black w-[300px] p-2 outer my-2">
@@ -45,11 +51,13 @@ function set_BG(){
         </div>
     </div>
 
-    <div class="border border-black w-[300px] p-2 outer my-2">
-        <div>
-            <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style">Defend!</h1>
-            </div>
+    <div class="border border-black w-[300px] p-2 outer my-2 flex flex-row">
+        <div class="border border-black w-[45px] h-[45px] mx-2">
+
+        </div>
+        <div class="flex flex-col">
+            <h3 class="text-xl text-white text-style">Pebble</h3>
+            <p class="box-text text-black"> Cost: 5 Value | Atk + 5</p>
         </div>
     </div>
 
