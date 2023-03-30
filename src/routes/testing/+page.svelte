@@ -1,25 +1,42 @@
 <script lang="ts">
-	// const axios = require('axios').default;
-	import {} from '@sveltejs/kit';
-	import { browser, building, dev, version } from '$app/environment';
+	import { browser } from '$app/environment';
+	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
 
-	// let messageFromServer: string;
+	let messagesFromServer: string[] = [];
+	let parsedMessages: any[] = [];
+	let connection: WebSocket;
 
-	let messagesFromServer: string[];
-	messagesFromServer.push('');
+	// client data
+	let clientId: string;
 
 	if (browser) {
-		// let connection = new WebSocket('ws://100.83.232.113:3883/socket', ['soap', 'xmpp']);
-		let connection = new WebSocket('ws://hcd-lab.student.rit.edu:3883/socket', ['soap', 'xmpp']);
+		connection = Connect();
 		connection.onmessage = function (message: MessageEvent) {
-			// messageFromServer = message.data;
 			messagesFromServer.push(message.data);
+			messagesFromServer = messagesFromServer;
+			console.log(message.data);
+			let parsedMessage = ParseServerMessage(message);
+			// TODO make sure this only happens once, only triggered on actually getting the clientId
+			if (typeof parsedMessage == typeof clientId) {
+				clientId = <string>parsedMessage;
+				console.log('clientId: ' + clientId);
+			}
+			parsedMessages.push(parsedMessage);
+			parsedMessages = parsedMessages;
 		};
 	}
 </script>
 
+<button on:click={() => SendMessage(connection, 'CLIENT:resetGame')}>reset game</button>
+
+<h1>logging</h1>
 <div>
 	{#each messagesFromServer as message}
+		<p>{message}</p>
+	{/each}
+</div>
+<div>
+	{#each parsedMessages as message}
 		<p>{message}</p>
 	{/each}
 </div>
