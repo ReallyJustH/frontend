@@ -12,6 +12,7 @@
     background-position: -19px -19px;
     border: solid 3px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .outer{

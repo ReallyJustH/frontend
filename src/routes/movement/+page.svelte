@@ -19,7 +19,7 @@ function set_BG(){
         </div>
     </div>
 
-    <div class="flex flex row items-center justify-around w-[300px]">
+    <div class="flex flex-row items-center justify-around w-[300px]">
         <div class="border border-black w-[80px] p-2 outer my-2">
             <div>
                 <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
@@ -43,7 +43,7 @@ function set_BG(){
         </div>
     </div>
     
-    <div class="border border-black w-[300px] p-2 outer flex flex-wrap items-center my-2">
+    <div class="border border-black w-[300px] p-2 outer flex flex-row justify-center items-center my-2">
         <div class="flex flex-row justify-evenly">
             <div class="flex flex-col items-center mr-2">
                 <div class=" box border border-black flex justify-center p-1 w-fit px-10" style="background-color: {color} ;">
