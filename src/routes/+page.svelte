@@ -23,33 +23,7 @@ function hostClick(){
     <div class="border border-black bg-white w-[300px] p-2 outer my-2" id="join">
         <div>
             <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style" on>Join Game</h1>
-            </div>
-        </div>
-    </div>
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div class="border border-black w-[300px] bg-white p-2 outer my-2" id="host" on:click={hostClick}>
-        <div>
-            <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                <h1 class="text-4xl text-white text-style">Host Game!</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex flex-row w-[300px] justify-between">
-        <div class="border border-black w-[140px] bg-white p-2 outer my-2">
-            <div>
-                <div class=" box border border-black flex  justify-center p-1" style="background-color: {color} ;">
-                    <h1 class="text-4xl text-white text-style">History</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="border border-black w-[140px] bg-white  p-2 outer my-2">
-            <div>
-                <div class=" box border border-black flex justify-center p-1" style="background-color: {color} ;">
-                    <h1 class="text-4xl text-white text-style">Rules</h1>
-                </div>
+                <h1 class="text-4xl text-white text-style" >Start Game</h1>
             </div>
         </div>
     </div>
