@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import type { ClientResponse } from '$lib/types';
 	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
 
 	let messagesFromServer: string[] = [];
-	let parsedMessages: any[] = [];
+	let parsedMessages: ClientResponse[] = [];
 	let connection: WebSocket;
 
 	// client data
@@ -17,10 +18,6 @@
 			console.log(message.data);
 			let parsedMessage = ParseServerMessage(message);
 			// TODO make sure this only happens once, only triggered on actually getting the clientId
-			if (typeof parsedMessage == typeof clientId) {
-				clientId = <string>parsedMessage;
-				console.log('clientId: ' + clientId);
-			}
 			parsedMessages.push(parsedMessage);
 			parsedMessages = parsedMessages;
 		};
@@ -37,6 +34,12 @@
 </div>
 <div>
 	{#each parsedMessages as message}
-		<p>{message}</p>
+		<p>{message.serverMessage}</p>
+		<p>{message.player?.id}</p>
+		{#if message.allPlayers?.length !== undefined}
+			{#each message.allPlayers as player}
+				<p>{player.id}</p>
+			{/each}
+		{/if}
 	{/each}
 </div>
