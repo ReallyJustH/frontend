@@ -1,6 +1,16 @@
 <script lang="ts">
 	import StanceMenu from '$lib/StanceMenu.svelte';
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import type { ClientResponse } from '$lib/types';
+	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
+
+	let messagesFromServer: string[] = [];
+	let parsedMessages: ClientResponse[] = [];
+	let connection: WebSocket;
+
+	// client data
+	let clientId: string;
 	let change: boolean;
 	function toggleMenu(): void {
 		change = change ? false : true;
@@ -112,19 +122,23 @@
 		</div>
 	</div>
 
-	<div class="border border-black w-[300px] p-2 outer my-3">
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<div class="border border-black w-[300px] p-2 outer my-3" on:click={toggleMenu}>
 		<div>
 			<div
 				class=" box border border-black flex justify-center p-1"
 				style="background-color:#205295 ;"
-				on:click={toggleMenu}
 			>
 				<h1 class="text-4xl text-white text-style">Stance</h1>
 			</div>
 		</div>
 	</div>
 
-	<div class="border border-black w-[300px] p-2 outer my-3">
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<div
+		class="border border-black w-[300px] p-2 outer my-3"
+		on:click={() => SendMessage(connection, 'CLIENT:_' + clientId + '_:gameInventory')}
+	>
 		<div>
 			<div
 				class=" box border border-black flex justify-center p-1"
@@ -135,7 +149,11 @@
 		</div>
 	</div>
 
-	<div class="border border-black w-[300px] p-2 outer my-3">
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<div
+		class="border border-black w-[300px] p-2 outer my-3"
+		on:click={() => SendMessage(connection, 'CLIENT:_' + clientId + '_:endTurn')}
+	>
 		<div>
 			<div
 				class=" box border border-black flex justify-center p-1"

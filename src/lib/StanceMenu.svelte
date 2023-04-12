@@ -1,10 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import AttackMenu from './AttackMenu.svelte';
 
 	export let state: boolean = false;
+	export let stateAttack: boolean = false;
 
 	function toggleMenu(): void {
 		state = state ? false : true;
+	}
+
+	function toggleAttackMenu(): void {
+		stateAttack = stateAttack ? false : true;
 	}
 
 	let style_hidden: string = 'bg-black top-0 left-0 hidden z-0 w-full h-full';
@@ -13,8 +19,10 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
+<AttackMenu {stateAttack} />
 <div class={state ? style_shown : style_hidden}>
 	<div class="border border-black w-[300px] p-4 outer my-3 bg-white">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div on:click={toggleMenu}>
 			<div
 				class=" box border border-black flex  items-center justify-center py-1 px-4 mb-6"
@@ -24,7 +32,7 @@
 			</div>
 		</div>
 
-		<div>
+		<div on:click={toggleAttackMenu}>
 			<div
 				class=" box border border-black flex justify-center p-1 my-2"
 				style="background-color:#cf142b ;"
