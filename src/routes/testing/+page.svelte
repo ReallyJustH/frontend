@@ -22,7 +22,7 @@
 	}
 </script>
 
-<button on:click={() => SendMessage(connection, 'CLIENT$$resetGame')}>reset game</button>
+<button on:click={() => SendMessage(connection, 'CLIENT$$anyClient$$resetGame')}>reset game</button>
 
 <div id="debug" class="absolute right-0 top-0 p-6 border-2 border-red-800">
 	{clientId}
