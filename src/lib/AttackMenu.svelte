@@ -1,7 +1,20 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { getContext } from 'svelte';
+	import { SendMessage } from '$lib/utils';
+	import type { Player, PlayerStance } from '$lib/types';
+	const id: string = getContext('id');
+	const thisPlayer: Player = getContext('thisPlayer');
+	const allPlayers: Player[] = getContext('allPlayers');
+	const connection: WebSocket = getContext('connection');
 
 	export let stateAttack: boolean = false;
+
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
+	export let target: string = ' ';
 
 	function toggleMenu(): void {
 		stateAttack = stateAttack ? false : true;
@@ -11,6 +24,13 @@
 
 	function kapow(): void {
 		showImg = showImg ? false : true;
+	}
+
+	function sendPlayer(): void {
+		if (!(target === ' ')) {
+			dispatch(target);
+			stateAttack = stateAttack ? false : true;
+		}
 	}
 
 	let attack_hidden: string = 'bg-black top-0 left-0 hidden z-10 w-full h-full';
@@ -32,45 +52,19 @@
 				<h1 class="text-4xl text-white text-style">Close</h1>
 			</div>
 		</div>
-
-		<div>
-			<div class={showImg ? kapow_shown : kapow_hidden}>
-				<img src="assets/images/pow.png" alt="" class="w-[125px] h-[75px]" />
-			</div>
-			<div
-				class=" box border border-black flex justify-center p-1 my-2"
-				style="background-color:#cf142b ;"
-				on:click={kapow}
-			>
-				<h1 class="text-4xl text-white text-style">Other Player</h1>
-			</div>
-		</div>
-		<div>
-			<div class={showImg ? kapow_shown : kapow_hidden}>
-				<img src="assets/images/pow.png" alt="" class="w-[125px] h-[75px]" />
-			</div>
-			<div
-				class=" box border border-black flex justify-center p-1 my-2"
-				style="background-color:#39ADD1 ;"
-				on:click={kapow}
-			>
-				<h1 class="text-4xl text-white text-style">Other Player</h1>
-			</div>
-		</div>
-		<div>
-			<div class={showImg ? kapow_shown : kapow_hidden}>
-				<img src="assets/images/pow.png" alt="" class="w-[125px] h-[75px]" />
-			</div>
-			<div
-				class=" box border border-black flex justify-center p-1 my-2"
-				style="background-color:#FFB637 ;"
-				on:click={kapow}
-			>
-				<h1 class="text-4xl text-white text-style">Other Player</h1>
-			</div>
-		</div>
-
-		<div>
+		{#each allPlayers as player}
+			{#if !(id === player.id)}
+				<div on:click={() => (target = player.id)}>
+					<div
+						class=" box border border-black flex justify-center p-1 mt-8"
+						style="background-color:#209525 ;"
+					>
+						<h1 class="text-4xl text-white text-style">{player.id}</h1>
+					</div>
+				</div>
+			{/if}
+		{/each}
+		<div on:click={sendPlayer}>
 			<div
 				class=" box border border-black flex justify-center p-1 mt-8"
 				style="background-color:#209525 ;"
