@@ -23,16 +23,16 @@
 	}
 </script>
 
-<main class=" bg-gradient-to-b from-[#D9D9D9] to-white">
+<main class=" bg-gradient-to-b from-[#205295] to-white">
 	<div class="box z-10">
 		<StanceMenu state={change} />
 		<InfoMenu infoState={info} />
 
 		<div class="flex flex-col justify-center w-full items-center p-4 h-screen">
-			<div class="border border-black w-[300px] p-2 outer mb-2 bg-white">
+			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
 				<div>
 					<div
-						class=" box border border-black flex justify-center p-1"
+						class=" box border-2 border-black flex justify-center p-1"
 						style="background-color:#205295 ;"
 					>
 						<h1 class="text-4xl text-white text-style">Movement Phase</h1>
@@ -42,20 +42,20 @@
 
 			<div class="flex flex-row items-center justify-around w-[300px] my-3">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div class="border border-black w-[140px] p-2 outer bg-white" on:click={toggleInfo}>
+				<div class="border-2 border-black w-[140px] p-2 outer bg-white" on:click={toggleInfo}>
 					<div>
 						<div
-							class=" box border border-black flex justify-center p-1"
+							class=" box border-2 border-black flex justify-center p-1"
 							style="background-color:#205295 ;"
 						>
 							<h1 class="text-4xl text-white text-style">info</h1>
 						</div>
 					</div>
 				</div>
-				<div class="border border-black w-[140px] p-2 outer bg-white">
+				<div class="border-2 border-black w-[140px] p-2 outer bg-white">
 					<div>
 						<div
-							class=" box border border-black flex justify-center p-1"
+							class=" box border-2 border-black flex justify-center p-1"
 							style="background-color:#205295 ;"
 						>
 							<h1 class="text-4xl text-white text-style">2011</h1>
@@ -65,12 +65,12 @@
 			</div>
 
 			<div
-				class="border border-black w-[300px] p-2 outer flex flex-row justify-center items-center my-3 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer flex flex-row justify-center items-center my-3 bg-white"
 			>
 				<div class="flex flex-row justify-evenly">
 					<div class="flex flex-col items-center mr-2">
 						<div
-							class=" box border border-black flex justify-center p-1 w-fit px-10"
+							class=" box border-2 border-black flex justify-center p-1 w-fit px-10"
 							style="background-color:#205295 ;"
 						>
 							<h1 class="text-4xl text-white text-style">100</h1>
@@ -79,7 +79,7 @@
 					</div>
 					<div class="flex flex-col items-center">
 						<div
-							class=" box border border-black flex justify-center p-1 w-fit px-10"
+							class=" box border-2 border-black flex justify-center p-1 w-fit px-10"
 							style="background-color:#205295 ;"
 						>
 							<h1 class="text-4xl text-white text-style">-20</h1>
@@ -89,11 +89,13 @@
 				</div>
 			</div>
 
-			<div class="border border-black w-[300px] p-2 outer flex flex-col items-center my-3 bg-white">
+			<div
+				class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-3 bg-white"
+			>
 				<div class="flex flex-row justify-evenly">
 					<div class="flex flex-col items-center mr-2">
 						<div
-							class=" box border border-black flex justify-center p-1 w-[130px]"
+							class=" box border-2 border-black flex justify-center p-1 w-[130px]"
 							style="background-color:#CC2C2C ;"
 						>
 							<h1 class="text-4xl text-white text-style">+5</h1>
@@ -102,7 +104,7 @@
 					</div>
 					<div class="flex flex-col items-center">
 						<div
-							class=" box border border-black flex justify-center p-1 w-[130px]"
+							class=" box border-2 border-black flex justify-center p-1 w-[130px]"
 							style="background-color:#39ADD1 ;"
 						>
 							<h1 class="text-4xl text-white text-style">+10</h1>
@@ -114,7 +116,7 @@
 				<div class="flex flex-row justify-evenly">
 					<div class="flex flex-col items-center mr-2">
 						<div
-							class=" box border border-black flex justify-center p-1 w-[130px] "
+							class=" box border-2 border-black flex justify-center p-1 w-[130px] "
 							style="background-color:#FFB637 ;"
 						>
 							<h1 class="text-4xl text-white text-style">+4IN</h1>
@@ -123,7 +125,7 @@
 					</div>
 					<div class="flex flex-col items-center">
 						<div
-							class=" box border border-black flex justify-center p-1 w-[130px] "
+							class=" box border-2 border-black flex justify-center p-1 w-[130px] "
 							style="background-color:#209525 ;"
 						>
 							<h1 class="text-4xl text-white text-style">-3IN</h1>
@@ -134,10 +136,10 @@
 			</div>
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div class="border border-black w-[300px] p-2 outer my-3" on:click={toggleMenu}>
+			<div class="border-2 border-black w-[300px] p-2 outer my-3 bg-white" on:click={toggleMenu}>
 				<div>
 					<div
-						class=" box border border-black flex justify-center p-1"
+						class=" box border-2 border-black flex justify-center p-1"
 						style="background-color:#205295 ;"
 					>
 						<h1 class="text-4xl text-white text-style">Stance</h1>
@@ -147,12 +149,12 @@
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
-				class="border border-black w-[300px] p-2 outer my-3"
-				on:click={() => SendMessage(connection, 'CLIENT:_' + clientId + '_:gameInventory')}
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white"
+				on:click={() => SendMessage(connection, 'CLIENT$$_' + clientId + '_$$gameInventory')}
 			>
 				<div>
 					<div
-						class=" box border border-black flex justify-center p-1"
+						class=" box border-2 border-black flex justify-center p-1"
 						style="background-color:#205295 ;"
 					>
 						<h1 class="text-4xl text-white text-style">Inventory</h1>
@@ -162,12 +164,12 @@
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
-				class="border border-black w-[300px] p-2 outer my-3"
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white"
 				on:click={() => SendMessage(connection, 'CLIENT:_' + clientId + '_:endTurn')}
 			>
 				<div>
 					<div
-						class=" box border border-black flex justify-center p-1"
+						class=" box border-2 border-black flex justify-center p-1"
 						style="background-color:#205295 ;"
 					>
 						<h1 class="text-4xl text-white text-style">End Turn</h1>
