@@ -1,9 +1,5 @@
-<script>
-	import { getContext } from 'svelte';
-	const id = getContext('id');
-	const thisPlayer = getContext('thisPlayer');
-	const allPlayers = getContext('allPlayers');
-	const connection = getContext('connection');
+<script lang="ts">
+	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 </script>
 
 <div class="flex flex-col justify-center w-full items-center p-4 h-screen my-2" style="">

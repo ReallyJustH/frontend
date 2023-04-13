@@ -1,8 +1,5 @@
 <script>
-	import { getContext } from 'svelte';
-	const id = getContext('id');
-	const thisPlayer = getContext('thisPlayer');
-	const allPlayers = getContext('allPlayers');
+	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 </script>
 
 <main class=" bg-gradient-to-b from-[#631D73] to-white">
