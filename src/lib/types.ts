@@ -34,8 +34,8 @@ export interface Player {
   value: number;
   items: Item[];
   readyState: boolean;
-  baseStatAttack: number;
-  baseStatDefend: number;
+  statAttack: number;
+  statDefend: number;
   playerAlive: boolean;
 }
 
