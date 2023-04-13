@@ -42,7 +42,10 @@
 
 			<div class="flex flex-row items-center justify-around w-[300px] my-3">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div class="border-2 border-black w-[140px] p-2 outer bg-white" on:click={toggleInfo}>
+				<div
+					class="border-2 border-black w-[140px] p-2 outer bg-white cursor-pointer"
+					on:click={toggleInfo}
+				>
 					<div>
 						<div
 							class=" box border-2 border-black flex justify-center p-1"
@@ -155,7 +158,7 @@
 				<div>
 					<div
 						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color:#205295 ;"
+						style="background-color:#D9D9D9 ;"
 					>
 						<h1 class="text-4xl text-white text-style">Inventory</h1>
 					</div>
