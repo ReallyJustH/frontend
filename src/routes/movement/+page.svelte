@@ -139,7 +139,10 @@
 			</div>
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div class="border-2 border-black w-[300px] p-2 outer my-3 bg-white" on:click={toggleMenu}>
+			<div
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer"
+				on:click={toggleMenu}
+			>
 				<div>
 					<div
 						class=" box border-2 border-black flex justify-center p-1"
@@ -152,7 +155,7 @@
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
-				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer"
 				on:click={() => SendMessage(connection, 'CLIENT$$_' + clientId + '_$$gameInventory')}
 			>
 				<div>
@@ -167,7 +170,7 @@
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
-				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer"
 				on:click={() => SendMessage(connection, 'CLIENT:_' + clientId + '_:endTurn')}
 			>
 				<div>
