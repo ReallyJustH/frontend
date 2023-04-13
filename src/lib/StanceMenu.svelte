@@ -1,9 +1,24 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import AttackMenu from './AttackMenu.svelte';
+
+	import { getContext } from 'svelte';
+	import { SendMessage } from '$lib/utils';
+	import type { Player, PlayerStance } from '$lib/types';
+	const id: string = getContext('id');
+	const thisPlayer: Player = getContext('thisPlayer');
+	const allPlayers: Player[] = getContext('allPlayers');
+	const connection: WebSocket = getContext('connection');
+
+	export let stance: PlayerStance = null;
 
 	export let state: boolean = false;
 	export let stateAttack: boolean = false;
+
+	export let target: string = '';
+
+	function handleMessage(event: { target: string }) {
+		target = event.target;
+	}
 
 	function toggleMenu(): void {
 		state = state ? false : true;
@@ -32,7 +47,8 @@
 			</div>
 		</div>
 
-		<div on:click={toggleAttackMenu}>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div on:click={toggleAttackMenu} on:message={handleMessage}>
 			<div
 				class=" box border border-black flex justify-center p-1 my-2"
 				style="background-color:#cf142b ;"
@@ -40,7 +56,8 @@
 				<h1 class="text-4xl text-white text-style">Attack</h1>
 			</div>
 		</div>
-		<div>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div on:click={() => (stance = 'Defend')}>
 			<div
 				class=" box border border-black flex justify-center p-1 my-2"
 				style="background-color:#39ADD1 ;"
@@ -48,7 +65,8 @@
 				<h1 class="text-4xl text-white text-style">Defend!</h1>
 			</div>
 		</div>
-		<div>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div on:click={() => (stance = 'Act')}>
 			<div
 				class=" box border border-black flex justify-center p-1 my-2"
 				style="background-color:#FFB637 ;"
@@ -57,7 +75,8 @@
 			</div>
 		</div>
 
-		<div>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div on:click={() => SendMessage(connection, 'CLIENT$$' + stance + '$$declareStance')}>
 			<div
 				class=" box border border-black flex justify-center p-1 mt-8"
 				style="background-color:#209525 ;"
