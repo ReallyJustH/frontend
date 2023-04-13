@@ -1,4 +1,4 @@
-import type { ClientResponse, MessageFromServer } from "./types";
+import type { ClientResponse, MessageFromServer, Player } from "./types";
 
 export const SOCKET_URL: string = "wss://hcd-lab.student.rit.edu/socket";
 
@@ -23,10 +23,10 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
       return { serverMessage: messageData[1] };
     /** returns the name of the newPlayer, the client. */
     case "newPlayer":
-      return { serverMessage: messageData[1], player: messageData[2] };
+      return { serverMessage: messageData[1], player: <Player>JSON.parse(messageData[2]) };
     /** retuns an array of all players. */
     case "allPlayers":
-      return { serverMessage: messageData[1], allPlayers: messageData[2] };
+      return { serverMessage: messageData[1], allPlayers: <Player[]>JSON.parse(messageData[2]) };
     case "gameEvent":
       // TODO trigger the event for each client,
       return { serverMessage: messageData[1] };

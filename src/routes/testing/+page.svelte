@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import Player from '$lib/Player.svelte';
 	import type { ClientResponse } from '$lib/types';
 	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
 
@@ -34,11 +35,12 @@
 </div>
 <div>
 	{#each parsedMessages as message}
-		<p>{message.serverMessage}</p>
-		<p>{message.player?.id}</p>
+		<p>ServerMessage: {message.serverMessage}</p>
+		<p>Player.id: {message.player?.id}</p>
+		<p>Player: {message.player}</p>
 		{#if message.allPlayers?.length !== undefined}
 			{#each message.allPlayers as player}
-				<p>{player.id}</p>
+				<p>AllPlayers Player.Id: {player.id}</p>
 			{/each}
 		{/if}
 	{/each}
