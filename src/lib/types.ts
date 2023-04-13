@@ -34,10 +34,14 @@ export interface Player {
   value: number;
   items: Item[];
   readyState: boolean;
+  baseStatAttack: number;
+  baseStatDefend: number;
+  playerAlive: boolean;
 }
 
 export interface ClientResponse {
   serverMessage: MessageFromServer,
+  clientId?: string,
   player?: Player,
   allPlayers?: Player[],
   item?: Item

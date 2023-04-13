@@ -1,10 +1,12 @@
 import type { ClientResponse, MessageFromServer, Player } from "./types";
 
 export const SOCKET_URL: string = "wss://hcd-lab.student.rit.edu/socket";
+export const DEV_SOCKET_URL: string = "ws://127.0.0.1:3883/socket";
 
 /** Works only in browser */
 export function Connect(): WebSocket {
-  return new WebSocket(SOCKET_URL);
+  return new WebSocket(DEV_SOCKET_URL)
+  // return new WebSocket(SOCKET_URL);
 }
 /** Works only in browser. Sends a message to the server. */
 export function SendMessage(
@@ -17,15 +19,17 @@ export function SendMessage(
 /** Parses messages recieved from the server. */
 export function ParseServerMessage(message: MessageEvent): ClientResponse {
   let stringMessage = message.data.toString();
-  let messageData = stringMessage.split(":");
+  let messageData = stringMessage.split("$$");
   switch (<MessageFromServer>messageData[1]) {
     case "clientConnected":
-      return { serverMessage: messageData[1] };
+      return { serverMessage: messageData[1], clientId: messageData[2] };
     /** returns the name of the newPlayer, the client. */
     case "newPlayer":
       return { serverMessage: messageData[1], player: <Player>JSON.parse(messageData[2]) };
     /** retuns an array of all players. */
     case "allPlayers":
+      console.log(messageData[2])
+      console.log(JSON.parse(messageData[2]))
       return { serverMessage: messageData[1], allPlayers: <Player[]>JSON.parse(messageData[2]) };
     case "gameEvent":
       // TODO trigger the event for each client,
