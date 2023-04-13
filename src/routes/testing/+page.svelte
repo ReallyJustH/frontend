@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import Player from '$lib/Player.svelte';
 	import type { ClientResponse } from '$lib/types';
 	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
 
-	let messagesFromServer: string[] = [];
 	let parsedMessages: ClientResponse[] = [];
 	let connection: WebSocket;
 
@@ -14,23 +12,19 @@
 	if (browser) {
 		connection = Connect();
 		connection.onmessage = function (message: MessageEvent) {
-			messagesFromServer.push(message.data);
-			messagesFromServer = messagesFromServer;
-			console.log(message.data);
 			let parsedMessage = ParseServerMessage(message);
 			if (parsedMessage.serverMessage === 'clientConnected' && clientId === '') {
 				clientId = parsedMessage.clientId!;
 			}
-			// TODO make sure this only happens once, only triggered on actually getting the clientId
 			parsedMessages.push(parsedMessage);
 			parsedMessages = parsedMessages;
 		};
 	}
 </script>
 
-<button on:click={() => SendMessage(connection, 'CLIENT:resetGame')}>reset game</button>
+<button on:click={() => SendMessage(connection, 'CLIENT$$resetGame')}>reset game</button>
 
-<div class="absolute right-0 top-0 p-6 border-2 border-red-800">
+<div id="debug" class="absolute right-0 top-0 p-6 border-2 border-red-800">
 	{clientId}
 </div>
 

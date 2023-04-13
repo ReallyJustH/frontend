@@ -17,13 +17,13 @@ export interface Item {
   effect: Effect;
 }
 
-export type AffectedStats = 'Attack' | 'Defend' | 'Range'
-export type EffectType = 'additive' | 'multiplicative'
+export type AffectedStats = "Attack" | "Defend" | "Range";
+export type EffectType = "additive" | "multiplicative";
 
 export interface Effect {
-  stat: AffectedStats
-  type: EffectType
-  amount: number
+  stat: AffectedStats;
+  type: EffectType;
+  amount: number;
 }
 
 export type PlayerStance = "Attack" | "Defend" | "Act" | null;
@@ -40,9 +40,15 @@ export interface Player {
 }
 
 export interface ClientResponse {
-  serverMessage: MessageFromServer,
-  clientId?: string,
-  player?: Player,
-  allPlayers?: Player[],
-  item?: Item
+  serverMessage: MessageFromServer;
+  clientId?: string;
+  player?: Player;
+  allPlayers?: Player[];
+  item?: Item;
+}
+
+export interface ClientData {
+  clientId: string;
+  thisPlayer: Player;
+  allPlayers: Player[];
 }
