@@ -1,14 +1,8 @@
 <script lang="ts">
 	import StanceMenu from '$lib/StanceMenu.svelte';
 	import InfoMenu from '$lib/InfoMenu.svelte';
-
-	import { getContext } from 'svelte';
+	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
-	import type { Player } from '$lib/types';
-	const id: string = getContext('id');
-	const thisPlayer: Player = getContext('thisPlayer');
-	const allPlayers: Player[] = getContext('allPlayers');
-	const connection: WebSocket = getContext('connection');
 
 	let change: boolean;
 	function toggleMenu(): void {
@@ -74,7 +68,7 @@
 							class=" box border-2 border-black flex justify-center p-1 w-fit px-10"
 							style="background-color:#205295 ;"
 						>
-							<h1 class="text-4xl text-white text-style">{thisPlayer.value}</h1>
+							<h1 class="text-4xl text-white text-style">{$thisPlayer.value}</h1>
 						</div>
 						<h1 class="text-4xl text-white text-style">Value</h1>
 					</div>
@@ -166,7 +160,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer"
-				on:click={() => SendMessage(connection, 'CLIENT:_' + clientId + '_:endTurn')}
+				on:click={() => SendMessage($connection, 'CLIENT:_' + $id + '_:endTurn')}
 			>
 				<div>
 					<div
