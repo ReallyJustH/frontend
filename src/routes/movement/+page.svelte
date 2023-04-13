@@ -4,9 +4,11 @@
 
 	import { getContext } from 'svelte';
 	import { SendMessage } from '$lib/utils';
-	const id = getContext('id');
-	const thisPlayer = getContext('thisPlayer');
-	const allPlayers = getContext('allPlayers');
+	import type { Player } from '$lib/types';
+	const id: string = getContext('id');
+	const thisPlayer: Player = getContext('thisPlayer');
+	const allPlayers: Player[] = getContext('allPlayers');
+	const connection: WebSocket = getContext('connection');
 
 	let change: boolean;
 	function toggleMenu(): void {
@@ -72,7 +74,7 @@
 							class=" box border-2 border-black flex justify-center p-1 w-fit px-10"
 							style="background-color:#205295 ;"
 						>
-							<h1 class="text-4xl text-white text-style">100</h1>
+							<h1 class="text-4xl text-white text-style">{thisPlayer.value}</h1>
 						</div>
 						<h1 class="text-4xl text-white text-style">Value</h1>
 					</div>
