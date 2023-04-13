@@ -1,20 +1,19 @@
 <script lang="ts">
 	import '../app.css';
 	import { browser } from '$app/environment';
-	import type { ClientData, ClientResponse, Player } from '$lib/types';
-	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
+	import type { ClientResponse, Player } from '$lib/types';
+	import { Connect, ParseServerMessage } from '$lib/utils';
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
-	// Create a store and update it when necessary...
-	// const clientData = writable<ClientData>();
 	const id = writable<string>();
+	const thisPlayer = writable<Player>();
 	const allPlayers = writable<Player[]>();
-	// thisPlayer: Player;
-	// allPlayers: Player[];
+
 	$: id.set(data.id);
+	$: thisPlayer.set(data.thisPlayer);
 	$: allPlayers.set(data.allPlayers);
 
 	let parsedMessages: ClientResponse[] = [];
@@ -35,21 +34,15 @@
 				allPlayers.set(parsedMessage.allPlayers!);
 			}
 			if (parsedMessage.serverMessage === 'newPlayer' && parsedMessage.player?.id === clientId) {
-				// thisPlayer = parsedMessage.player!;
+				thisPlayer.set(parsedMessage.player!);
 			}
 			parsedMessages.push(parsedMessage);
 			parsedMessages = parsedMessages;
 		};
 	}
-
-	// ...and add it to the context for child components to access
 	setContext('id', id);
+	setContext('thisPlayer', thisPlayer);
 	setContext('allPlayers', allPlayers);
-	// setContext('id', clientId);
-	// setContext('thisPlayer', thisPlayer!);
-	// setContext('allPlayers', allPlayers!);
-	// setContext('connection', connection!);
-	// setContext('allPlayers');
 </script>
 
 <div id="debug" class="absolute right-0 top-0 p-6 border-2 border-red-800">

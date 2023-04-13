@@ -46,9 +46,3 @@ export interface ClientResponse {
   allPlayers?: Player[];
   item?: Item;
 }
-
-export interface ClientData {
-  clientId: string;
-  thisPlayer: Player;
-  allPlayers: Player[];
-}
