@@ -11,19 +11,21 @@
 	const id = writable<string>();
 	const thisPlayer = writable<Player>();
 	const allPlayers = writable<Player[]>();
+	const connection = writable<WebSocket>();
 
 	$: id.set(data.id);
 	$: thisPlayer.set(data.thisPlayer);
 	$: allPlayers.set(data.allPlayers);
+	$: connection.set(data.connection);
 
 	let parsedMessages: ClientResponse[] = [];
-	let connection: WebSocket;
+	// let connection: WebSocket;
 
 	let clientId: string = '';
 
 	if (browser) {
-		connection = Connect();
-		connection.onmessage = function (message: MessageEvent) {
+		$connection = Connect();
+		$connection.onmessage = function (message: MessageEvent) {
 			let parsedMessage = ParseServerMessage(message);
 			console.log('message from server parsed');
 			if (parsedMessage.serverMessage === 'clientConnected' && clientId === '') {
@@ -43,6 +45,7 @@
 	setContext('id', id);
 	setContext('thisPlayer', thisPlayer);
 	setContext('allPlayers', allPlayers);
+	setContext('connection', connection);
 </script>
 
 <div id="debug" class="absolute right-0 top-0 p-6 border-2 border-red-800">

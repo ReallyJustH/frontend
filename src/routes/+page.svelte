@@ -1,8 +1,9 @@
 <script>
 	import { getContext } from 'svelte';
-	// Retrieve user store from context  const user = getContext('user');
 	const id = getContext('id');
+	const thisPlayer = getContext('thisPlayer');
 	const allPlayers = getContext('allPlayers');
+	const connection = getContext('connection');
 </script>
 
 <div class="flex flex-col justify-center w-full items-center p-4 h-screen my-2" style="">

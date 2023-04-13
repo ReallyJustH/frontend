@@ -1,17 +1,13 @@
 <script lang="ts">
 	import StanceMenu from '$lib/StanceMenu.svelte';
-	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
-	import type { ClientResponse } from '$lib/types';
-	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
 	import InfoMenu from '$lib/InfoMenu.svelte';
 
-	let messagesFromServer: string[] = [];
-	let parsedMessages: ClientResponse[] = [];
-	let connection: WebSocket;
+	import { getContext } from 'svelte';
+	import { SendMessage } from '$lib/utils';
+	const id = getContext('id');
+	const thisPlayer = getContext('thisPlayer');
+	const allPlayers = getContext('allPlayers');
 
-	// client data
-	let clientId: string;
 	let change: boolean;
 	function toggleMenu(): void {
 		change = change ? false : true;
@@ -154,10 +150,7 @@
 			</div>
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div
-				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer"
-				on:click={() => SendMessage(connection, 'CLIENT$$_' + clientId + '_$$gameInventory')}
-			>
+			<div class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer">
 				<div>
 					<div
 						class=" box border-2 border-black flex justify-center p-1"
