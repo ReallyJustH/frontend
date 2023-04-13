@@ -18,7 +18,7 @@
 			messagesFromServer = messagesFromServer;
 			console.log(message.data);
 			let parsedMessage = ParseServerMessage(message);
-			if (parsedMessage.serverMessage === 'clientConnected') {
+			if (parsedMessage.serverMessage === 'clientConnected' && clientId === '') {
 				clientId = parsedMessage.clientId!;
 			}
 			// TODO make sure this only happens once, only triggered on actually getting the clientId
