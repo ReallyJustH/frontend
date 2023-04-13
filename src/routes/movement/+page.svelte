@@ -4,6 +4,7 @@
 	import { browser } from '$app/environment';
 	import type { ClientResponse } from '$lib/types';
 	import { Connect, ParseServerMessage, SendMessage } from '$lib/utils';
+	import InfoMenu from '$lib/InfoMenu.svelte';
 
 	let messagesFromServer: string[] = [];
 	let parsedMessages: ClientResponse[] = [];
@@ -15,9 +16,16 @@
 	function toggleMenu(): void {
 		change = change ? false : true;
 	}
+
+	let info: boolean = false;
+	function toggleInfo(): void {
+		info = info ? false : true;
+	}
 </script>
 
 <StanceMenu state={change} />
+<InfoMenu infoState={info} />
+
 <div class="flex flex-col justify-center w-full items-center p-4 h-screen">
 	<div class="border border-black w-[300px] p-2 outer mb-2">
 		<div>
@@ -31,7 +39,8 @@
 	</div>
 
 	<div class="flex flex-row items-center justify-around w-[300px] my-3">
-		<div class="border border-black w-[140px] p-2 outer">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div class="border border-black w-[140px] p-2 outer" on:click={toggleInfo}>
 			<div>
 				<div
 					class=" box border border-black flex justify-center p-1"

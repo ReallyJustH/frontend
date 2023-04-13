@@ -6,6 +6,7 @@
 	function toggleMenu(): void {
 		stateAttack = stateAttack ? false : true;
 	}
+
 	export let showImg: boolean = false;
 
 	function kapow(): void {
