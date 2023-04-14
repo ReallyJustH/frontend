@@ -130,7 +130,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer"
-				on:click={() => SendMessage($connection, 'CLIENT:_' + $id + '_:endTurn')}
+				on:click={() => SendMessage($connection, 'CLIENT$$' + $id + '$$move')}
 			>
 				<div>
 					<div

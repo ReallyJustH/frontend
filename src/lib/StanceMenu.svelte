@@ -48,6 +48,7 @@
 
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div on:click={toggleAttackMenu}>
+			<!-- on:attack={handleMessage} -->
 			<div
 				class=" box border border-black flex justify-center p-1 my-2"
 				style="background-color:#cf142b ;"
