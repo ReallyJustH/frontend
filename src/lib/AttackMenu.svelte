@@ -1,33 +1,24 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, targetPlayer } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 
 	export let stateAttack: boolean = false;
 
-	import { createEventDispatcher } from 'svelte';
-
-	const dispatch = createEventDispatcher();
-
-	export let targetPlayer: string = ' ';
-
 	function toggleMenu(): void {
 		stateAttack = stateAttack ? false : true;
+	}
+
+	function sendPlayer(): void {
+		if (!($targetPlayer === null)) {
+			stateAttack = stateAttack ? false : true;
+		}
 	}
 
 	export let showImg: boolean = false;
 
 	function kapow(): void {
 		showImg = showImg ? false : true;
-	}
-
-	function sendPlayer(): void {
-		if (!(targetPlayer === ' ')) {
-			dispatch('attack', {
-				targetPlayer
-			});
-			stateAttack = stateAttack ? false : true;
-		}
 	}
 
 	let attack_hidden: string = 'bg-black top-0 left-0 hidden z-10 w-full h-full';
@@ -51,7 +42,7 @@
 		</div>
 		{#each $allPlayers as player}
 			{#if !($id === player.id)}
-				<div on:click={() => (targetPlayer = player.id)}>
+				<div on:click={() => ($targetPlayer = player)}>
 					<div
 						class=" box border border-black flex justify-center p-1 mt-8"
 						style="background-color:#209525 ;"

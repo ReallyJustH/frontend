@@ -1,9 +1,10 @@
 <script lang="ts">
 	import AttackMenu from './AttackMenu.svelte';
 
-	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, targetPlayer } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import type { PlayerStance } from './types';
+	import { send } from 'vite';
 
 	export let stance: PlayerStance = null;
 
@@ -18,6 +19,8 @@
 
 	function toggleMenu(): void {
 		state = state ? false : true;
+
+		stance = 'Attack';
 	}
 
 	function toggleAttackMenu(): void {
@@ -44,7 +47,7 @@
 		</div>
 
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div on:click={toggleAttackMenu} on:attack={handleMessage}>
+		<div on:click={toggleAttackMenu}>
 			<div
 				class=" box border border-black flex justify-center p-1 my-2"
 				style="background-color:#cf142b ;"
@@ -72,7 +75,14 @@
 		</div>
 
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div on:click={() => SendMessage($connection, 'CLIENT$$' + stance + '$$declareStance')}>
+		<div
+			on:click={() => {
+				if ((stance = 'Attack')) {
+				} else {
+					SendMessage($connection, 'CLIENT$$' + stance + '$$declareStance');
+				}
+			}}
+		>
 			<div
 				class=" box border border-black flex justify-center p-1 mt-8"
 				style="background-color:#209525 ;"
