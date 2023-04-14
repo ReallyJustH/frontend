@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PlayerCard from '$lib/PlayerCard.svelte';
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { SendMessage } from '$lib/utils';
 </script>
 
 <div class="flex flex-col justify-center w-full items-center p-4 h-screen my-2" style="">
@@ -21,7 +22,12 @@
 				class=" box border border-black flex justify-center p-1"
 				style="background-color: #205295;"
 			>
-				<h1 class="text-4xl text-white text-style">Start Game</h1>
+				<h1
+					class="text-4xl text-white text-style"
+					on:click={() => SendMessage($connection, 'CLIENT$$' + $id + '$$startGame')}
+				>
+					Start Game
+				</h1>
 			</div>
 		</div>
 	</div>
