@@ -1,5 +1,9 @@
-<script>
+<script lang="ts">
+	import { SendMessage } from '$lib/utils';
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+
+	/** the name of the item being purchased */
+	let itemName: string;
 </script>
 
 <main class=" bg-gradient-to-b from-[#631D73] to-white">
@@ -15,7 +19,13 @@
 					</div>
 				</div>
 			</div>
-
+			<div
+				class="p-8 m-16 border-4 border-black rounded-xl hover:border-cyan-400"
+				on:click={() => SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName)}
+				on:keypress={() => SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName)}
+			>
+				this is an item trust me
+			</div>
 			<div
 				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[310px] flex inline-flex"
 			>
@@ -165,7 +175,13 @@
 						class=" box border-2 border-black flex justify-center p-1"
 						style="background-color: #205295  ;"
 					>
-						<h1 class="text-4xl text-white text-style">End Turn</h1>
+						<h1
+							class="text-4xl text-white text-style"
+							on:click={() => SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping')}
+							on:keypress={() => SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping')}
+						>
+							done shopping
+						</h1>
 					</div>
 				</div>
 			</div>
