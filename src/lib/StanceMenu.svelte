@@ -4,7 +4,6 @@
 	import { id, thisPlayer, allPlayers, connection, targetPlayer } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import type { PlayerStance } from './types';
-	import { send } from 'vite';
 
 	export let stance: PlayerStance = null;
 
@@ -39,7 +38,7 @@
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div on:click={toggleMenu}>
 			<div
-				class=" box border border-black flex  items-center justify-center py-1 px-4 mb-6"
+				class=" box border border-black flex items-center justify-center py-1 px-4 mb-6"
 				style="background-color:#cf142b ;"
 			>
 				<h1 class="text-4xl text-white text-style">Close</h1>
