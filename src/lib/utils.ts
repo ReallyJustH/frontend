@@ -6,8 +6,8 @@ export const DEV_SOCKET_URL: string = "ws://127.0.0.1:3883/socket";
 
 /** Works only in browser */
 export function Connect(): WebSocket {
-  return new WebSocket(DEV_SOCKET_URL)
-  // return new WebSocket(SOCKET_URL);
+  // return new WebSocket(DEV_SOCKET_URL)
+  return new WebSocket(SOCKET_URL);
 }
 /** Works only in browser. Sends a message to the server. */
 export function SendMessage(
@@ -47,6 +47,7 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
       return { serverMessage: messageData[1] };
     case "gameResolve":
       // TODO show a leaderboard page? just move to next turn? not sure
+      goto('/event')
       return { serverMessage: messageData[1] };
     default:
       return { serverMessage: messageData[1] };
