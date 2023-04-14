@@ -84,7 +84,7 @@
 							class=" box border-2 border-black flex justify-center p-1 w-[130px]"
 							style="background-color:#CC2C2C ;"
 						>
-							<h1 class="text-4xl text-white text-style">{thisPlayer.statAttack}</h1>
+							<h1 class="text-4xl text-white text-style">{$thisPlayer.statAttack}</h1>
 						</div>
 						<h1 class="text-4xl text-white text-style">Atk</h1>
 					</div>
@@ -93,7 +93,7 @@
 							class=" box border-2 border-black flex justify-center p-1 w-[130px]"
 							style="background-color:#39ADD1 ;"
 						>
-							<h1 class="text-4xl text-white text-style">{thisPlayer.statDefend}</h1>
+							<h1 class="text-4xl text-white text-style">{$thisPlayer.statDefend}</h1>
 						</div>
 						<h1 class="text-4xl text-white text-style">Def</h1>
 					</div>

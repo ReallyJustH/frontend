@@ -1,13 +1,9 @@
 <script lang="ts">
 	import AttackMenu from './AttackMenu.svelte';
 
-	import { getContext } from 'svelte';
+	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
-	import type { Player, PlayerStance } from '$lib/types';
-	const id: string = getContext('id');
-	const thisPlayer: Player = getContext('thisPlayer');
-	const allPlayers: Player[] = getContext('allPlayers');
-	const connection: WebSocket = getContext('connection');
+	import type { PlayerStance } from './types';
 
 	export let stance: PlayerStance = null;
 
@@ -16,8 +12,8 @@
 
 	export let target: string = '';
 
-	function handleMessage(event: { target: string }) {
-		target = event.target;
+	function handleMessage(event: { targetPlayer: string }) {
+		target = event.targetPlayer;
 	}
 
 	function toggleMenu(): void {
@@ -48,7 +44,7 @@
 		</div>
 
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div on:click={toggleAttackMenu} on:message={handleMessage}>
+		<div on:click={toggleAttackMenu} on:attack={handleMessage}>
 			<div
 				class=" box border border-black flex justify-center p-1 my-2"
 				style="background-color:#cf142b ;"
@@ -76,7 +72,7 @@
 		</div>
 
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div on:click={() => SendMessage(connection, 'CLIENT$$' + stance + '$$declareStance')}>
+		<div on:click={() => SendMessage($connection, 'CLIENT$$' + stance + '$$declareStance')}>
 			<div
 				class=" box border border-black flex justify-center p-1 mt-8"
 				style="background-color:#209525 ;"

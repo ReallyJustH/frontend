@@ -1,12 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getContext } from 'svelte';
+	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
-	import type { Player, PlayerStance } from '$lib/types';
-	const id: string = getContext('id');
-	const thisPlayer: Player = getContext('thisPlayer');
-	const allPlayers: Player[] = getContext('allPlayers');
-	const connection: WebSocket = getContext('connection');
 
 	export let stateAttack: boolean = false;
 
@@ -14,7 +9,7 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let target: string = ' ';
+	export let targetPlayer: string = ' ';
 
 	function toggleMenu(): void {
 		stateAttack = stateAttack ? false : true;
@@ -27,8 +22,10 @@
 	}
 
 	function sendPlayer(): void {
-		if (!(target === ' ')) {
-			dispatch(target);
+		if (!(targetPlayer === ' ')) {
+			dispatch('attack', {
+				targetPlayer
+			});
 			stateAttack = stateAttack ? false : true;
 		}
 	}
@@ -52,9 +49,9 @@
 				<h1 class="text-4xl text-white text-style">Close</h1>
 			</div>
 		</div>
-		{#each allPlayers as player}
-			{#if !(id === player.id)}
-				<div on:click={() => (target = player.id)}>
+		{#each $allPlayers as player}
+			{#if !($id === player.id)}
+				<div on:click={() => (targetPlayer = player.id)}>
 					<div
 						class=" box border border-black flex justify-center p-1 mt-8"
 						style="background-color:#209525 ;"
