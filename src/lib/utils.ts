@@ -1,5 +1,6 @@
 import { goto } from "$app/navigation";
 import type { ClientResponse, MessageFromServer, Player } from "./types";
+import { base } from '$app/paths';
 
 export const SOCKET_URL: string = "wss://hcd-lab.student.rit.edu/socket";
 export const DEV_SOCKET_URL: string = "ws://127.0.0.1:3883/socket";
@@ -34,20 +35,20 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
       console.log(JSON.parse(messageData[2]))
       return { serverMessage: messageData[1], allPlayers: <Player[]>JSON.parse(messageData[2]) };
     case "gameEvent":
-      goto('/event')
+      goto(`${base}/event`)
       return { serverMessage: messageData[1] };
     case "gameCalculate":
       // TODO an animation? call that a stretch goal, but do something when the server calculates
       return { serverMessage: messageData[1] };
     case "gameShop":
-      goto('/shop')
+      goto(`${base}/shop`)
       return { serverMessage: messageData[1] };
     case "gameMove":
-      goto('/move')
+      goto(`${base}/move`)
       return { serverMessage: messageData[1] };
     case "gameResolve":
       // TODO show a leaderboard page? just move to next turn? not sure
-      goto('/event')
+      goto(`${base}/event`)
       return { serverMessage: messageData[1] };
     default:
       return { serverMessage: messageData[1] };

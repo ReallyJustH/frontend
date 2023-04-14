@@ -11,6 +11,11 @@ const config = {
       precompress: false,
       strict: true
     }),
+    paths: {
+      assets: '',
+      base: '/marketplace-melee',
+      relative: false
+    }
 	},
 	preprocess: vitePreprocess()
 };

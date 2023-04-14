@@ -1,6 +1,7 @@
 <script lang="ts">
 	import StanceMenu from '$lib/StanceMenu.svelte';
 	import InfoMenu from '$lib/InfoMenu.svelte';
+	import { base } from '$app/paths';
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 
