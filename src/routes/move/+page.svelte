@@ -19,9 +19,6 @@
 
 <main class=" bg-gradient-to-b from-[#205295] to-white">
 	<div class="box z-10">
-		<StanceMenu state={change} />
-		<InfoMenu infoState={info} />
-
 		<div class="flex flex-col justify-center w-full items-center p-4 h-screen">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
 				<div>

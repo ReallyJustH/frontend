@@ -19,23 +19,32 @@
 						class=" box border-2 border-black flex justify-center p-1"
 						style="background-color: #D9D9D9 ;"
 					>
-						<h1 class="text-4xl text-white text-style">Back To Stance Menu</h1>
+						<h1 class="text-4xl text-white text-style">Back To Stances</h1>
 					</div>
 				</div>
 			</button>
-
-			{#each $allPlayers as player}
-				{#if !($id === player.id)}
-					<button on:click={() => ($targetPlayer = player)}>
-						<div
-							class=" box border border-black flex justify-center p-1 mt-8"
-							style="background-color:#cf142b  ;"
+			{#if $allPlayers?.length > 0}
+				{#each $allPlayers as player}
+					{#if !($id === player.id)}
+						<button
+							class="border-2 border-black w-[300px] p-2 outer mb-2 mt-8 bg-white"
+							on:click={() => {
+								$targetPlayer = player;
+								goto('stance');
+							}}
 						>
-							<h1 class="text-4xl text-white text-style">{player.id}</h1>
-						</div>
-					</button>
-				{/if}
-			{/each}
+							<div>
+								<div
+									class=" box border-2 border-black flex justify-center p-1"
+									style="background-color: #cf142b ;"
+								>
+									<h1 class="text-4xl text-white text-style">{player.id}</h1>
+								</div>
+							</div>
+						</button>
+					{/if}
+				{/each}
+			{/if}
 		</div>
 	</div>
 </main>
