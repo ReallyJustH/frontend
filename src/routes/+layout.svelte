@@ -21,6 +21,9 @@
 			}
 			if (parsedMessage.serverMessage === 'allPlayers') {
 				allPlayers.set(parsedMessage.allPlayers!);
+				$allPlayers.forEach((player) => {
+					if (player.id === $id) thisPlayer.set(player);
+				});
 			}
 			if (parsedMessage.serverMessage === 'newPlayer' && parsedMessage.player?.id === clientId) {
 				thisPlayer.set(parsedMessage.player!);
