@@ -12,10 +12,6 @@
 
 	export let target: string = '';
 
-	function handleMessage(event: { targetPlayer: string }) {
-		target = event.targetPlayer;
-	}
-
 	function toggleMenu(): void {
 		state = state ? false : true;
 
@@ -78,8 +74,12 @@
 		<div
 			on:click={() => {
 				if ((stance = 'Attack')) {
+					SendMessage(
+						$connection,
+						'CLIENT$$' + $id + '$$declareStance$$' + stance + '$$' + targetPlayer
+					);
 				} else {
-					SendMessage($connection, 'CLIENT$$' + stance + '$$declareStance');
+					SendMessage($connection, 'CLIENT$$' + $id + '$$declareStance$$' + stance);
 				}
 			}}
 		>

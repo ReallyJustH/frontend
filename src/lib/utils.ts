@@ -7,8 +7,8 @@ export const DEV_SOCKET_URL: string = "ws://127.0.0.1:3883/socket";
 
 /** Works only in browser */
 export function Connect(): WebSocket {
-  // return new WebSocket(DEV_SOCKET_URL)
-  return new WebSocket(SOCKET_URL);
+  return new WebSocket(DEV_SOCKET_URL)
+  // return new WebSocket(SOCKET_URL);
 }
 /** Works only in browser. Sends a message to the server. */
 export function SendMessage(

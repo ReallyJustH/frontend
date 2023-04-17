@@ -13,7 +13,8 @@
 		$connection = Connect();
 		$connection.onmessage = function (message: MessageEvent) {
 			let parsedMessage = ParseServerMessage(message);
-			console.log('message from server parsed');
+			// console.log('message from server parsed');
+			// console.log(parsedMessage);
 			if (parsedMessage.serverMessage === 'clientConnected' && clientId === '') {
 				clientId = parsedMessage.clientId!;
 				id.set(clientId);
@@ -28,7 +29,13 @@
 			parsedMessages = parsedMessages;
 		};
 	}
+
+	function beforeUnload(): void {
+		$connection.close();
+	}
 </script>
+
+<svelte:window on:beforeunload={beforeUnload} />
 
 <div id="debug" class="absolute right-0 top-0 p-6 border-2 border-red-800">
 	{$id}
