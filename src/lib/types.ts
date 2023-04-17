@@ -6,6 +6,7 @@ export type MessageFromServer =
   | "gameCalculate"
   | "gameShop"
   | "gameMove"
+  | "gameStance"
   | "gameResolve";
 
 export interface Item {

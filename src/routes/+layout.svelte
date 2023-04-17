@@ -16,7 +16,11 @@
 			// console.log('message from server parsed');
 			// console.log(parsedMessage);
 			if (parsedMessage.serverMessage === 'clientConnected' && clientId === '') {
-				clientId = parsedMessage.clientId!;
+				console.log('clientConnected');
+				if (parsedMessage.clientId !== undefined) {
+					clientId = parsedMessage.clientId;
+				}
+				console.log(clientId);
 				id.set(clientId);
 			}
 			if (parsedMessage.serverMessage === 'allPlayers') {
@@ -38,9 +42,8 @@
 <svelte:window on:beforeunload={beforeUnload} />
 
 <div id="debug" class="absolute right-0 top-0 p-6 border-2 border-red-800">
-	{$id}
+	All Players
 	<br />
-	{$id}
 	{#if $allPlayers?.length > 0}
 		{#each $allPlayers as player}
 			<div>{player.id}</div>

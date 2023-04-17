@@ -4,12 +4,14 @@ import { base } from '$app/paths';
 
 export const SOCKET_URL: string = "wss://hcd-lab.student.rit.edu/socket";
 export const DEV_SOCKET_URL: string = "ws://127.0.0.1:3883/socket";
+export const DEV_TS_SOCKET_URL: string = "ws://100.114.57.112:3883/socket";
 
 /** Works only in browser */
 export function Connect(): WebSocket {
-  // return new WebSocket(DEV_SOCKET_URL)
-  return new WebSocket(SOCKET_URL);
+  return new WebSocket(DEV_TS_SOCKET_URL)
+  // return new WebSocket(SOCKET_URL);
 }
+
 /** Works only in browser. Sends a message to the server. */
 export function SendMessage(
   socket: WebSocket,
@@ -45,6 +47,9 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
       return { serverMessage: messageData[1] };
     case "gameMove":
       goto(`${base}/move`)
+      return { serverMessage: messageData[1] };
+    case "gameStance":
+      goto(`${base}/stance`)
       return { serverMessage: messageData[1] };
     case "gameResolve":
       // TODO show a leaderboard page? just move to next turn? not sure
