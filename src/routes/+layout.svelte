@@ -13,14 +13,10 @@
 		$connection = Connect();
 		$connection.onmessage = function (message: MessageEvent) {
 			let parsedMessage = ParseServerMessage(message);
-			// console.log('message from server parsed');
-			// console.log(parsedMessage);
 			if (parsedMessage.serverMessage === 'clientConnected' && clientId === '') {
-				console.log('clientConnected');
 				if (parsedMessage.clientId !== undefined) {
 					clientId = parsedMessage.clientId;
 				}
-				console.log(clientId);
 				id.set(clientId);
 			}
 			if (parsedMessage.serverMessage === 'allPlayers') {
