@@ -80,7 +80,7 @@
 						class="border-2 border-black flex justify-center p-1"
 						style="background-color: #D9D9D9  ;"
 					>
-						<p class="box-text ">
+						<p class="box-text">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus ipsum quis
 							nulla condimentum ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit. Curabitur ac erat massa.
@@ -169,7 +169,7 @@
 				</div>
 			</div>
 
-			<div class="border-2 border-black w-[300px] p-2 outer my-2 bg-white">
+			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white">
 				<div>
 					<div
 						class=" box border-2 border-black flex justify-center p-1"
@@ -184,7 +184,7 @@
 						</h1>
 					</div>
 				</div>
-			</div>
+			</button>
 		</div>
 	</div>
 </main>

@@ -1,5 +1,6 @@
 <script>
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { goto } from '$app/navigation';
 </script>
 
 <main class=" bg-gradient-to-b from-[#D9D9D9] to-white">
@@ -69,16 +70,21 @@
 				</div>
 			</div>
 
-			<div class="border-2 border-black w-[300px] p-2 outer my-2 bg-white">
+			<button
+				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white"
+				on:click={() => {
+					goto('move');
+				}}
+			>
 				<div>
 					<div
 						class=" box border-2 border-black flex justify-center p-1"
 						style="background-color: #205295 ;"
 					>
-						<h1 class="text-4xl text-white text-style">Return</h1>
+						<h1 class="text-4xl text-white text-style">Back to Move</h1>
 					</div>
 				</div>
-			</div>
+			</button>
 		</div>
 	</div>
 </main>

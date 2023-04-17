@@ -116,17 +116,21 @@
 				</div>
 			</div>
 
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer">
+			<button
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white"
+				on:click={() => {
+					goto('inventory');
+				}}
+			>
 				<div>
 					<div
 						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color:#D9D9D9 ;"
+						style="background-color: #D9D9D9 ;"
 					>
 						<h1 class="text-4xl text-white text-style">Inventory</h1>
 					</div>
 				</div>
-			</div>
+			</button>
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
