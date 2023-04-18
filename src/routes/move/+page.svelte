@@ -2,6 +2,7 @@
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import { goto } from '$app/navigation';
+	import InfoMenu from '$lib/InfoMenu.svelte';
 
 	let info: boolean = false;
 	function toggleInfo(): void {
@@ -9,6 +10,7 @@
 	}
 </script>
 
+<InfoMenu infoState={info} />
 <main class=" bg-gradient-to-b from-[#205295] to-white">
 	<div class="box z-10">
 		<div class="flex flex-col justify-center w-full items-center p-4 h-screen">
