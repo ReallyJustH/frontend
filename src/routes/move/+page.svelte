@@ -25,7 +25,7 @@
 
 			<div class="flex flex-row items-center justify-around w-[300px] my-3">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div
+				<button
 					class="border-2 border-black w-[140px] p-2 outer bg-white cursor-pointer"
 					on:click={toggleInfo}
 				>
@@ -35,7 +35,7 @@
 					>
 						<h1 class="text-4xl text-white text-style">info</h1>
 					</div>
-				</div>
+				</button>
 				<div class="border-2 border-black w-[140px] p-2 outer bg-white">
 					<div
 						class=" box border-2 border-black flex justify-center p-1"
@@ -88,7 +88,7 @@
 			</div>
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div
+			<button
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white cursor-pointer"
 				on:click={() => {
 					goto('stance');
@@ -100,7 +100,7 @@
 				>
 					<h1 class="text-4xl text-white text-style">Stance</h1>
 				</div>
-			</div>
+			</button>
 
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white"

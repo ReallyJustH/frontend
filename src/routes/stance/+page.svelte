@@ -54,13 +54,11 @@
 				class="border-2 border-black w-[300px] p-2 outer mb-8 bg-white"
 				on:click={() => (stance = 'Act')}
 			>
-				<div>
-					<div
-						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color:#FFB637 ;"
-					>
-						<h1 class="text-4xl text-white text-style">Act!</h1>
-					</div>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color:#FFB637 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Act!</h1>
 				</div>
 			</button>
 

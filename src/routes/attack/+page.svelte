@@ -14,13 +14,11 @@
 					goto('stance');
 				}}
 			>
-				<div>
-					<div
-						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color: #D9D9D9 ;"
-					>
-						<h1 class="text-4xl text-white text-style">Back To Stances</h1>
-					</div>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color: #D9D9D9 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Return</h1>
 				</div>
 			</button>
 			{#if $allPlayers?.length > 0}
@@ -33,13 +31,11 @@
 								goto('stance');
 							}}
 						>
-							<div>
-								<div
-									class=" box border-2 border-black flex justify-center p-1"
-									style="background-color: #cf142b ;"
-								>
-									<h1 class="text-4xl text-white text-style">{player.id}</h1>
-								</div>
+							<div
+								class=" box border-2 border-black flex justify-center p-1"
+								style="background-color: #cf142b ;"
+							>
+								<h1 class="text-4xl text-white text-style">{player.id}</h1>
 							</div>
 						</button>
 					{/if}
