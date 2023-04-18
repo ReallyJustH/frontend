@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { browser } from '$app/environment';
-	import type { ClientResponse } from '$lib/types';
+	import type { ClientResponse, Player } from '$lib/types';
 	import { Connect, ParseServerMessage } from '$lib/utils';
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 
@@ -13,7 +13,11 @@
 		$connection = Connect();
 		$connection.onmessage = function (message: MessageEvent) {
 			let parsedMessage = ParseServerMessage(message);
-			if (parsedMessage.serverMessage === 'clientConnected' && clientId === '') {
+			if (
+				parsedMessage.serverMessage === 'clientConnected' &&
+				clientId === '' &&
+				$thisPlayer?.id === ''
+			) {
 				if (parsedMessage.clientId !== undefined) {
 					clientId = parsedMessage.clientId;
 				}
@@ -22,7 +26,8 @@
 			if (parsedMessage.serverMessage === 'allPlayers') {
 				allPlayers.set(parsedMessage.allPlayers!);
 				$allPlayers.forEach((player) => {
-					if (player.id === $id) thisPlayer.set(player);
+					if (player.id === $id) thisPlayer.set(<Player>player);
+					console.log('printing player after thisPlayer is set: ' + player.id);
 				});
 			}
 			if (parsedMessage.serverMessage === 'newPlayer' && parsedMessage.player?.id === clientId) {

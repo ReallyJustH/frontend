@@ -1,15 +1,7 @@
 <script lang="ts">
-	import StanceMenu from '$lib/StanceMenu.svelte';
-	import InfoMenu from '$lib/InfoMenu.svelte';
-	import { base } from '$app/paths';
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import { goto } from '$app/navigation';
-
-	let change: boolean;
-	function toggleMenu(): void {
-		change = change ? false : true;
-	}
 
 	let info: boolean = false;
 	function toggleInfo(): void {
@@ -21,13 +13,11 @@
 	<div class="box z-10">
 		<div class="flex flex-col justify-center w-full items-center p-4 h-screen">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
-				<div>
-					<div
-						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color:#205295 ;"
-					>
-						<h1 class="text-4xl text-white text-style">Movement Phase</h1>
-					</div>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color:#205295 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Movement Phase</h1>
 				</div>
 			</div>
 
@@ -37,23 +27,19 @@
 					class="border-2 border-black w-[140px] p-2 outer bg-white cursor-pointer"
 					on:click={toggleInfo}
 				>
-					<div>
-						<div
-							class=" box border-2 border-black flex justify-center p-1"
-							style="background-color:#205295 ;"
-						>
-							<h1 class="text-4xl text-white text-style">info</h1>
-						</div>
+					<div
+						class=" box border-2 border-black flex justify-center p-1"
+						style="background-color:#205295 ;"
+					>
+						<h1 class="text-4xl text-white text-style">info</h1>
 					</div>
 				</div>
 				<div class="border-2 border-black w-[140px] p-2 outer bg-white">
-					<div>
-						<div
-							class=" box border-2 border-black flex justify-center p-1"
-							style="background-color:#205295 ;"
-						>
-							<h1 class="text-4xl text-white text-style">2011</h1>
-						</div>
+					<div
+						class=" box border-2 border-black flex justify-center p-1"
+						style="background-color:#205295 ;"
+					>
+						<h1 class="text-4xl text-white text-style">2011</h1>
 					</div>
 				</div>
 			</div>
@@ -106,13 +92,11 @@
 					goto('stance');
 				}}
 			>
-				<div>
-					<div
-						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color:#205295 ;"
-					>
-						<h1 class="text-4xl text-white text-style">Stance</h1>
-					</div>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color:#205295 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Stance</h1>
 				</div>
 			</div>
 
@@ -122,13 +106,11 @@
 					goto('inventory');
 				}}
 			>
-				<div>
-					<div
-						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color: #D9D9D9 ;"
-					>
-						<h1 class="text-4xl text-white text-style">Inventory</h1>
-					</div>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color: #D9D9D9 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Inventory</h1>
 				</div>
 			</button>
 		</div>
