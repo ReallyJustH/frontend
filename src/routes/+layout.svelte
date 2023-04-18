@@ -43,7 +43,7 @@
 					console.log('this player is dead: ' + player.id);
 					if (player.id === $id) {
 						// thisPlayer.set(player);
-						// clientDie();
+						clientDie();
 					}
 				});
 			}
