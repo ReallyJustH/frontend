@@ -93,11 +93,13 @@
 				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
 				on:click={() => {
 					if ((stance = 'Attack')) {
+						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
 						SendMessage(
 							$connection,
 							'CLIENT$$' + $id + '$$declareStance$$' + stance + '$$' + targetPlayer
 						);
 					} else {
+						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
 						SendMessage($connection, 'CLIENT$$' + $id + '$$declareStance$$' + stance);
 					}
 				}}

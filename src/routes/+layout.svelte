@@ -67,6 +67,7 @@
 	<br />
 	{#if $thisPlayer !== null}
 		<div>{$thisPlayer?.id}</div>
+		<div>readyState: {$thisPlayer?.readyState}</div>
 	{/if}
 	<br />
 	All Players

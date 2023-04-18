@@ -21,8 +21,14 @@
 			</div>
 			<div
 				class="p-8 m-16 border-4 border-black rounded-xl hover:border-cyan-400"
-				on:click={() => SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName)}
-				on:keypress={() => SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName)}
+				on:click={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+					SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName);
+				}}
+				on:keypress={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+					SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName);
+				}}
 			>
 				this is an item trust me
 			</div>
@@ -177,8 +183,14 @@
 					>
 						<h1
 							class="text-4xl text-white text-style"
-							on:click={() => SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping')}
-							on:keypress={() => SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping')}
+							on:click={() => {
+								SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+								SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
+							}}
+							on:keypress={() => {
+								SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+								SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
+							}}
 						>
 							done shopping
 						</h1>

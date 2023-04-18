@@ -24,7 +24,10 @@
 			>
 				<h1
 					class="text-4xl text-white text-style"
-					on:click={() => SendMessage($connection, 'CLIENT$$' + $id + '$$startGame')}
+					on:click={() => {
+						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+						SendMessage($connection, 'CLIENT$$' + $id + '$$startGame');
+					}}
 				>
 					Start Game
 				</h1>
