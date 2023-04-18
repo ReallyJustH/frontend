@@ -2,6 +2,8 @@ export type MessageFromServer =
 	| 'clientConnected'
 	| 'newPlayer'
 	| 'allPlayers'
+	| 'playerDeath'
+	| 'gameCreated'
 	| 'gameEvent'
 	| 'gameCalculate'
 	| 'gameShop'
@@ -45,5 +47,6 @@ export interface ClientResponse {
 	clientId?: string;
 	player?: Player;
 	allPlayers?: Player[];
+	deadPlayers?: Player[];
 	item?: Item;
 }

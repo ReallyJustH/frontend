@@ -22,6 +22,10 @@ export function SendMessage(
 	console.log('message sent to server: ' + message);
 }
 
+export function clientDie() {
+	goto(`${base}/dead`)
+}
+
 /** Parses messages recieved from the server. */
 export function ParseServerMessage(message: MessageEvent): ClientResponse {
 	let stringMessage = message.data.toString();
@@ -37,6 +41,12 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
 			console.log(messageData[2]);
 			console.log(JSON.parse(messageData[2]));
 			return { serverMessage: messageData[1], allPlayers: <Player[]>JSON.parse(messageData[2]) };
+		case 'playerDeath':
+			console.log(messageData[2]);
+			console.log(JSON.parse(messageData[2]));
+			return { serverMessage: messageData[1], deadPlayers: <Player[]>JSON.parse(messageData[2]) };
+		case 'gameCreated':
+			return { serverMessage: messageData[1] };
 		case 'gameEvent':
 			goto(`${base}/event`);
 			return { serverMessage: messageData[1] };
