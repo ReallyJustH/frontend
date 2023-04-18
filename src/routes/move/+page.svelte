@@ -5,6 +5,7 @@
 	import InfoMenu from '$lib/InfoMenu.svelte';
 
 	let info: boolean = false;
+
 	function toggleInfo(): void {
 		info = info ? false : true;
 	}

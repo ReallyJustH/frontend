@@ -1,11 +1,19 @@
 <script lang="ts">
 	import { SendMessage } from '$lib/utils';
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import LoadingPopUp from '$lib/LoadingPopUp.svelte';
 
 	/** the name of the item being purchased */
 	let itemName: string;
+
+	let loading: boolean = false;
+
+	function toggleLoading(): void {
+		loading = loading ? false : true;
+	}
 </script>
 
+<LoadingPopUp show={loading} />
 <main class=" bg-gradient-to-b from-[#631D73] to-white">
 	<div class="box z-10">
 		<div class="flex flex-col justify-center w-full items-center p-4 h-screen z-20">
@@ -181,6 +189,7 @@
 						on:click={() => {
 							SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
 							SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
+							toggleLoading();
 						}}
 						on:keypress={() => {
 							SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
