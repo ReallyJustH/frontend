@@ -41,7 +41,7 @@
 
 <main class=" bg-gradient-to-b from-[#FFB637] to-white">
 	<div class="box z-10">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-screen my-2" style="">
+		<div class="flex flex-col justify-center w-full items-center p-4 h-screen my-2">
 			<button
 				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
 				on:click={() => {
@@ -63,7 +63,7 @@
 				}}
 			>
 				<img
-					src="/assets/images/pow.png"
+					src="assets/images/pow.png"
 					alt="Kapow!"
 					class={showAtk ? atkImg : atkImgHidden}
 					style="width: 125px; height: 100px;"
@@ -88,7 +88,7 @@
 				}}
 			>
 				<img
-					src="/assets/images/pow.png"
+					src="assets/images/pow.png"
 					alt="Kapow!"
 					class={showDef ? defendImg : defendImgHidden}
 					style="width: 125px; height: 100px;"
@@ -113,7 +113,7 @@
 				}}
 			>
 				<img
-					src="/assets/images/pow.png"
+					src="assets/images/pow.png"
 					alt="Kapow!"
 					class={showAct ? actImg : actImgHidden}
 					style="width: 125px; height: 100px;"
