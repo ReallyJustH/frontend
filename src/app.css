@@ -5,7 +5,11 @@
 
 @font-face {
 	font-family: 'Anime Ace 2';
+<<<<<<< Updated upstream
 	src: url('assets/fonts/animeace2_reg.otf');
+=======
+	src: local('assets/fonts/animeace2_reg.tff');
+>>>>>>> Stashed changes
 }
 
 .box {
