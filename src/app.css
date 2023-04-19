@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.cdnfonts.com/css/anime-ace');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: 'Anime Ace 2';
-<<<<<<< Updated upstream
-	src: url('assets/fonts/animeace2_reg.otf');
-=======
-	src: local('assets/fonts/animeace2_reg.tff');
->>>>>>> Stashed changes
-}
+
 
 .box {
 	background-image: radial-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 0);
@@ -31,7 +25,7 @@
 }
 
 .box-text {
-	font-family: 'Anime Ace 2';
+	font-family: 'Anime Ace', sans-serif;
 	font-size: 10.5px;
 }
 
