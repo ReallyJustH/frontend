@@ -40,3 +40,15 @@
 	/* background-color: rgb(155,196,233); */
 	background-color: linear-gradient(0deg, rgba(155, 196, 233, 1) 0%, rgba(56, 115, 193, 1) 100%);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
+}

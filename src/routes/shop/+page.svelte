@@ -39,7 +39,7 @@
 				this is an item trust me
 			</div>
 			<div
-				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[310px] flex inline-flex"
+				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[310px] inline-flex scrollbar-hide"
 			>
 				<div
 					class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-2 mr-4 whitespace-normal bg-white"
@@ -188,11 +188,12 @@
 						class="text-4xl text-white text-style"
 						on:click={() => {
 							SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
-							SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
 							toggleLoading();
+							SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
 						}}
 						on:keypress={() => {
 							SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+							toggleLoading();
 							SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
 						}}
 					>

@@ -8,9 +8,9 @@ export const DEV_TS_SOCKET_URL: string = 'ws://100.114.57.112:3883/socket';
 
 /** Works only in browser */
 export function Connect(): WebSocket {
-	// return new WebSocket(DEV_TS_SOCKET_URL);
+	return new WebSocket(DEV_TS_SOCKET_URL);
 	// return new WebSocket(DEV_SOCKET_URL)
-	return new WebSocket(SOCKET_URL);
+	//return new WebSocket(SOCKET_URL);
 }
 
 /** Works only in browser. Sends a message to the server. */

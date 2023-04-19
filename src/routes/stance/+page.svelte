@@ -3,8 +3,39 @@
 	import { SendMessage } from '$lib/utils';
 	import type { PlayerStance } from './types';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	//function to check if target player is assigned and will toggle image of attack if true
+	onMount(async () => {
+		if (!($targetPlayer === undefined)) {
+			if (showAct === true || showDef == true) {
+				showAct = false;
+				showDef = false;
+			}
+			showAtk = true;
+		} else {
+			showAtk = false;
+		}
+	});
 
 	export let stance: PlayerStance = null;
+
+	//Variables for toggling Atk/Def/Act Images
+	let showDef: boolean = false;
+	let showAct: boolean = false;
+	let showAtk: boolean = false;
+
+	//Hide/Show Defend Image classes
+	let defendImg: string = 'absolute translate-x-[225px] translate-y-[-35px]';
+	let defendImgHidden: string = 'hidden';
+
+	//Hide/Show Act Image classes
+	let actImg: string = 'absolute translate-x-[225px] translate-y-[-35px]';
+	let actImgHidden: string = 'hidden';
+
+	//Hide/Show Attack Image classes
+	let atkImg: string = 'absolute translate-x-[225px] translate-y-[-35px]';
+	let atkImgHidden: string = 'hidden';
 </script>
 
 <main class=" bg-gradient-to-b from-[#FFB637] to-white">
@@ -30,6 +61,12 @@
 					goto('attack');
 				}}
 			>
+				<img
+					src="/assets/images/pow.png"
+					alt="Kapow!"
+					class={showAtk ? atkImg : atkImgHidden}
+					style="width: 125px; height: 100px;"
+				/>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #cf142b ;"
@@ -40,8 +77,21 @@
 
 			<button
 				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
-				on:click={() => (stance = 'Defend')}
+				on:click={() => {
+					stance = 'Defend';
+					if (showAct === true || showAtk === true) {
+						showAct = false;
+						showAtk = false;
+					}
+					showDef = showDef ? false : true;
+				}}
 			>
+				<img
+					src="/assets/images/pow.png"
+					alt="Kapow!"
+					class={showDef ? defendImg : defendImgHidden}
+					style="width: 125px; height: 100px;"
+				/>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #39ADD1 ;"
@@ -52,8 +102,21 @@
 
 			<button
 				class="border-2 border-black w-[300px] p-2 outer mb-8 bg-white"
-				on:click={() => (stance = 'Act')}
+				on:click={() => {
+					stance = 'Act';
+					if (showDef === true || showAtk === true) {
+						showDef = false;
+						showAtk = false;
+					}
+					showAct = showAct ? false : true;
+				}}
 			>
+				<img
+					src="/assets/images/pow.png"
+					alt="Kapow!"
+					class={showAct ? actImg : actImgHidden}
+					style="width: 125px; height: 100px;"
+				/>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color:#FFB637 ;"
