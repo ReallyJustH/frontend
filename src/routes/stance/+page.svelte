@@ -5,7 +5,9 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 
-	//function to check if target player is assigned and will toggle image of attack if true
+	export let stance: PlayerStance = null;
+
+	//function to check if target player is assigned and will toggle image of attack and set stance to attack if true
 	onMount(async () => {
 		if (!($targetPlayer === undefined)) {
 			if (showAct === true || showDef == true) {
@@ -13,12 +15,11 @@
 				showDef = false;
 			}
 			showAtk = true;
+			stance = 'Attack';
 		} else {
 			showAtk = false;
 		}
 	});
-
-	export let stance: PlayerStance = null;
 
 	//Variables for toggling Atk/Def/Act Images
 	let showDef: boolean = false;
@@ -128,13 +129,13 @@
 			<button
 				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
 				on:click={() => {
-					if ((stance = 'Attack')) {
+					if (stance === 'Attack') {
 						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
 						SendMessage(
 							$connection,
 							'CLIENT$$' + $id + '$$declareStance$$' + stance + '$$' + targetPlayer
 						);
-					} else {
+					} else if (stance === 'Defend' || stance === 'Act') {
 						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
 						SendMessage($connection, 'CLIENT$$' + $id + '$$declareStance$$' + stance);
 					}
