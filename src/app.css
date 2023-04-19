@@ -5,7 +5,7 @@
 
 @font-face {
 	font-family: 'Anime Ace 2';
-	src: local('assets/fonts/animeace2_reg.otf');
+	src: url('assets/fonts/animeace2_reg.otf');
 }
 
 .box {
