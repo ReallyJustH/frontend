@@ -4,9 +4,9 @@
 	import { SendMessage } from '$lib/utils';
 </script>
 
-<main class=" bg-gradient-to-b from-[#205295] to-white">
-	<div class="box z-10">
-		<div class="flex flex-col justify-center w-full items-center p-4 my-2 h-screen" style="">
+<main class=" bg-gradient-to-b from-[#205295] to-white h-screen">
+	<div class="box z-10 h-[100%]">
+		<div class="flex flex-col justify-center w-full items-center p-4 my-2 h-[100%]" style="">
 			<div class="w-[300px] text-center">
 				<h1 class="text-6xl text-white text-style">Marketplace Melee!</h1>
 			</div>

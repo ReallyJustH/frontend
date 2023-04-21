@@ -3,17 +3,15 @@
 	import { goto } from '$app/navigation';
 </script>
 
-<main class=" bg-gradient-to-b from-[#D9D9D9] to-white">
-	<div class="box z-10">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-screen">
+<main class=" bg-gradient-to-b from-[#D9D9D9] to-white h-screen">
+	<div class="box z-10 h-[100%]">
+		<div class="flex flex-col justify-center w-full items-center p-4 h-[100%]">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
-				<div>
-					<div
-						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color: #D9D9D9 ;"
-					>
-						<h1 class="text-4xl text-white text-style">Inventory</h1>
-					</div>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color: #D9D9D9 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Inventory</h1>
 				</div>
 			</div>
 
@@ -76,13 +74,11 @@
 					goto('move');
 				}}
 			>
-				<div>
-					<div
-						class=" box border-2 border-black flex justify-center p-1"
-						style="background-color: #205295 ;"
-					>
-						<h1 class="text-4xl text-white text-style">Back to Move</h1>
-					</div>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color: #205295 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Back to Move</h1>
 				</div>
 			</button>
 		</div>

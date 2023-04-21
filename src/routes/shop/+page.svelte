@@ -16,7 +16,7 @@
 <LoadingPopUp show={loading} />
 <main class=" bg-gradient-to-b from-[#631D73] to-white">
 	<div class="box z-10">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-screen z-20">
+		<div class="flex flex-col justify-center w-full items-center p-4 h-[100%] z-20">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
@@ -25,7 +25,7 @@
 					<h1 class="text-4xl text-white text-style">Shop</h1>
 				</div>
 			</div>
-			<div
+			<!-- <div
 				class="p-8 m-16 border-4 border-black rounded-xl hover:border-cyan-400"
 				on:click={() => {
 					SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
@@ -37,9 +37,9 @@
 				}}
 			>
 				this is an item trust me
-			</div>
+			</div> -->
 			<div
-				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[310px] inline-flex scrollbar-hide"
+				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[330px] inline-flex scrollbar-hide"
 			>
 				<div
 					class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-2 mr-4 whitespace-normal bg-white"
