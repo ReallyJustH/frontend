@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { id, thisPlayer, allPlayers, connection, targetPlayer } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, targetPlayer, pageName } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import type { PlayerStance } from './types';
 	import { goto } from '$app/navigation';
@@ -48,7 +48,7 @@
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md"
 				on:click={() => {
-					goto('move');
+					goto($pageName);
 				}}
 			>
 				<div

@@ -9,3 +9,4 @@ export const shopItems = writable<Item[]>();
 export const deadPlayers = writable<Player[]>();
 export const connection = writable<WebSocket>();
 export let targetPlayer = writable<Player>();
+export let pageName = writable<string>();

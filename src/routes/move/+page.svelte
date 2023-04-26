@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, pageName } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import { goto } from '$app/navigation';
 	import InfoMenu from '$lib/InfoMenu.svelte';
@@ -58,6 +58,7 @@
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
 				on:click={() => {
+					$pageName = 'move';
 					goto('inventory');
 				}}
 			>

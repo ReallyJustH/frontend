@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { SendMessage } from '$lib/utils';
-	import { id, thisPlayer, allPlayers, connection, shopItems } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, shopItems, pageName } from '$lib/stores';
 	import LoadingPopUp from '$lib/LoadingPopUp.svelte';
 	import ItemCard from '$lib/ItemCard.svelte';
+	import PlayerStats from '$lib/PlayerStats.svelte';
+	import { goto } from '$app/navigation';
 
 	/** the name of the item being purchased */
 	let itemName: string;
@@ -18,7 +20,7 @@
 <main class=" bg-gradient-to-b from-[#631D73] to-white">
 	<div class="box z-10 h-full">
 		<div class="flex flex-col justify-center w-full items-center p-4 h-full z-20">
-			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
+			<div class="border-2 border-black w-[300px] p-2 outer mb-4 bg-white">
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #631D73  ;"
@@ -26,6 +28,7 @@
 					<h1 class="text-4xl text-white text-style">Shop</h1>
 				</div>
 			</div>
+			<PlayerStats />
 			<div
 				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[330px] inline-flex scrollbar-hide relative translate-x-[15px]"
 			>
@@ -43,7 +46,7 @@
 				{/if}
 			</div>
 
-			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white">
+			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md">
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #631D73  ;"
@@ -88,7 +91,22 @@
 				</div>
 			</div>
 
-			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white">
+			<button
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
+				on:click={() => {
+					$pageName = 'shop';
+					goto('inventory');
+				}}
+			>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color: #D9D9D9 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Inventory</h1>
+				</div>
+			</button>
+
+			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md">
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #205295  ;"

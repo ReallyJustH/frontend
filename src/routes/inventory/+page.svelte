@@ -1,12 +1,12 @@
 <script>
-	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, pageName } from '$lib/stores';
 	import { goto } from '$app/navigation';
 </script>
 
 <main class=" bg-gradient-to-b from-[#D9D9D9] to-white h-screen">
 	<div class="box z-10 h-[100%]">
 		<div class="flex flex-col justify-center w-full items-center p-4 h-[100%]">
-			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
+			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white rounded-md">
 				<div
 					class=" box border-2 border-black flex justify-center p-1 relative"
 					style="background-color: #D9D9D9 ;"
@@ -15,14 +15,14 @@
 				</div>
 			</div>
 			<button
-				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md"
 				on:click={() => {
-					goto('move');
+					goto($pageName);
 				}}
 			>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
-					style="background-color: #205295 ;"
+					style="background-color: #205295;"
 				>
 					<h1 class="text-4xl text-white text-style">Return</h1>
 				</div>
