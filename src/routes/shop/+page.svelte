@@ -14,7 +14,7 @@
 </script>
 
 <LoadingPopUp show={loading} />
-<main class=" bg-gradient-to-b from-[#631D73] to-white h-[105vh]">
+<main class=" bg-gradient-to-b from-[#631D73] to-white">
 	<div class="box z-10 h-full">
 		<div class="flex flex-col justify-center w-full items-center p-4 h-full z-20">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
