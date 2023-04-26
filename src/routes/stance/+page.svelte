@@ -46,7 +46,7 @@
 			<PlayerStats />
 
 			<button
-				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md"
 				on:click={() => {
 					goto('move');
 				}}
@@ -60,7 +60,7 @@
 			</button>
 
 			<button
-				class="border-2 border-black w-[300px] p-2 outer mb-2 mt-8 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer mb-2 mt-8 bg-white rounded-md"
 				on:click={() => {
 					goto('attack');
 				}}
@@ -80,7 +80,7 @@
 			</button>
 
 			<button
-				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white rounded-md"
 				on:click={() => {
 					stance = 'Defend';
 					if (showAct === true || showAtk === true) {
@@ -105,7 +105,7 @@
 			</button>
 
 			<button
-				class="border-2 border-black w-[300px] p-2 outer mb-8 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer mb-8 bg-white rounded-md"
 				on:click={() => {
 					stance = 'Act';
 					if (showDef === true || showAtk === true) {
@@ -130,7 +130,7 @@
 			</button>
 
 			<button
-				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
+				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white rounded-md"
 				on:click={() => {
 					if (stance === 'Attack') {
 						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
