@@ -27,7 +27,7 @@
 	</div>
 	<h1 class="text-2xl text-white text-style self-start py-1">{itemName}</h1>
 	<div class=" border-2 border-black flex p-1" style="background-color: #D9D9D9;">
-		<p class="box-text">
+		<p class="box-text flex-grow">
 			{itemDescription}
 		</p>
 	</div>
