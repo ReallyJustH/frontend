@@ -39,7 +39,7 @@
 	</div>
 
 	<button
-		class=" box border-2 border-black flex justify-center p-1 w-full h-[50px]"
+		class=" box border-2 border-black flex justify-center p-1 w-full h-[50px] self-end"
 		style="background-color: #631D73 ;"
 	>
 		<h1
