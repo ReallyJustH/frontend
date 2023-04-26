@@ -14,9 +14,9 @@
 </script>
 
 <LoadingPopUp show={loading} />
-<main class=" bg-gradient-to-b from-[#631D73] to-white">
-	<div class="box z-10">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-[100%] z-20">
+<main class=" bg-gradient-to-b from-[#631D73] to-white h-[105vh]">
+	<div class="box z-10 h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 h-full z-20">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
@@ -39,12 +39,12 @@
 				this is an item trust me
 			</div> -->
 			<div
-				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[330px] inline-flex scrollbar-hide"
+				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[330px] inline-flex scrollbar-hide relative translate-x-[15px]"
 			>
 				<div
 					class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-2 mr-4 whitespace-normal bg-white"
 				>
-					<div class="flex flex-row justify-end items-end">
+					<div class="flex flex-row justify-end items-end snap-x">
 						<div class="border-2 border-black w-[140px] h-[140px] mx-2" />
 						<div
 							class=" box border-2 border-black flex justify-center p-1 w-[125px] h-[50px]"
@@ -76,7 +76,7 @@
 				</div>
 
 				<div
-					class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-2 mr-4 whitespace-normal bg-white"
+					class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-2 mr-4 whitespace-normal bg-white snap-x"
 				>
 					<div class="flex flex-row justify-end items-end">
 						<div class="border-2 border-black w-[140px] h-[140px] mx-2" />
@@ -110,7 +110,7 @@
 				</div>
 
 				<div
-					class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-2 mr-4 whitespace-normal bg-white"
+					class="border-2 border-black w-[300px] p-2 outer flex flex-col items-center my-2 mr-4 whitespace-normal bg-white snap-x"
 				>
 					<div class="flex flex-row justify-end items-end">
 						<div class="border border-black w-[140px] h-[140px] mx-2" />
