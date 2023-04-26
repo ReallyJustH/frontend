@@ -22,7 +22,7 @@
 			class=" box border-2 border-black flex justify-center p-1 w-[125px] h-[50px]"
 			style="background-color: #CC2C2C;"
 		>
-			<h1 class="text-3xl text-white text-style">{itemEffect?.amount}</h1>
+			<h1 class="text-3xl text-white text-style">{itemEffect.type}{itemEffect?.amount}</h1>
 		</div>
 	</div>
 	<h1 class="text-2xl text-white text-style self-start py-1">{itemName}</h1>
