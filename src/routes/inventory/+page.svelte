@@ -14,6 +14,19 @@
 					<h1 class="text-4xl text-white text-style">Inventory</h1>
 				</div>
 			</div>
+			<button
+				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white"
+				on:click={() => {
+					goto('move');
+				}}
+			>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color: #205295 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Return</h1>
+				</div>
+			</button>
 			<div
 				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[330px] inline-flex scrollbar-hide relative translate-x-[15px]"
 			>
@@ -69,20 +82,6 @@
 					<h1 class="text-2xl text-white text-style">Use</h1>
 				</div>
 			</div>
-
-			<button
-				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white"
-				on:click={() => {
-					goto('move');
-				}}
-			>
-				<div
-					class=" box border-2 border-black flex justify-center p-1"
-					style="background-color: #205295 ;"
-				>
-					<h1 class="text-4xl text-white text-style">Back to Move</h1>
-				</div>
-			</button>
 		</div>
 	</div>
 </main>
