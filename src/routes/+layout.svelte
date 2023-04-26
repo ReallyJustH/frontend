@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import type { ClientResponse, Player } from '$lib/types';
 	import { Connect, ParseServerMessage, clientDie } from '$lib/utils';
-	import { id, thisPlayer, allPlayers, connection, deadPlayers } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, deadPlayers, shopItems } from '$lib/stores';
 	// import { goto } from '$app/navigation';
 	// import { base } from '$app/paths';
 
@@ -47,11 +47,13 @@
 					}
 				});
 			}
+			if (parsedMessage.serverMessage === 'shopItems') {
+				console.log('layout recieved serverMessage shopItems');
+				shopItems.set(parsedMessage.items!);
+				console.log($shopItems);
+			}
 			parsedMessages.push(parsedMessage);
 			parsedMessages = parsedMessages;
-			// if (clientAlive === false) {
-			// 	goto(`${base}/dead`);
-			// }
 		};
 	}
 

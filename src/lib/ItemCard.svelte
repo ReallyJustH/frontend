@@ -5,7 +5,7 @@
 
 	export let itemName: string;
 	export let itemDescription: string;
-	export let itemPrice: string;
+	export let itemPrice: number;
 	export let isConsumable: boolean;
 	export let numUses: number = 1;
 	export let itemRarity: Rarity;

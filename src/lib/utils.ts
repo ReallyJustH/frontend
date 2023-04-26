@@ -36,7 +36,7 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
 			return { serverMessage: messageData[1], clientId: messageData[2] };
 		/** returns the name of the newPlayer, the client. */
 		case 'newPlayer':
-			return { serverMessage: messageData[1], player: <Player>JSON.parse(messageData[2]) };
+			return { serverMessage: messageData[1] };
 		/** retuns an array of all players. */
 		case 'allPlayers':
 			console.log(messageData[2]);
@@ -44,6 +44,7 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
 			return { serverMessage: messageData[1], allPlayers: <Player[]>JSON.parse(messageData[2]) };
 		/** returns an array of 3 items to be displayed in the shop */
 		case 'shopItems':
+			console.log('shopItems')
 			console.log(messageData[2]);
 			console.log(JSON.parse(messageData[2]));
 			return { serverMessage: messageData[1], items: <Item[]>JSON.parse(messageData[2]) };
