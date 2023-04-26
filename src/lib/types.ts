@@ -26,7 +26,7 @@ export default interface Item {
 export type Rarity = 'Common' | 'Uncommon' | 'Rare' | 'Legendary';
 
 /** The stat that the item effects */
-export type AffectedStats = 'Attack' | 'Defend' | 'Range';
+export type AffectedStats = 'Attack' | 'Defend' | 'Range' | 'Value';
 /** the type of effect */
 export type EffectType = 'additive' | 'multiplicative';
 

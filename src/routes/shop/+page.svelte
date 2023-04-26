@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { SendMessage } from '$lib/utils';
-	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, shopItems } from '$lib/stores';
 	import LoadingPopUp from '$lib/LoadingPopUp.svelte';
 	import ItemCard from '$lib/ItemCard.svelte';
 
@@ -29,9 +29,18 @@
 			<div
 				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[330px] inline-flex scrollbar-hide relative translate-x-[15px]"
 			>
-				<ItemCard />
-				<ItemCard />
-				<ItemCard />
+				{#if $shopItems?.length > 0}
+					{#each $shopItems as item}
+						<ItemCard
+							itemName={item.name}
+							itemDescription={item.description}
+							itemEffect={item.effect}
+							itemPrice={item.price}
+							itemRarity={item.rarity}
+							isConsumable={item.consumable}
+						/>
+					{/each}
+				{/if}
 			</div>
 
 			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white">
