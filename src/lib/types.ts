@@ -3,6 +3,7 @@ export type MessageFromServer =
 	| 'newPlayer'
 	| 'allPlayers'
 	| 'playerDeath'
+	| 'shopItems'
 	| 'gameCreated'
 	| 'gameEvent'
 	| 'gameCalculate'
@@ -11,18 +12,25 @@ export type MessageFromServer =
 	| 'gameStance'
 	| 'gameResolve';
 
-export interface Item {
+export default interface Item {
 	name: string;
 	description: string;
 	consumable: boolean;
-	numUses: number;
+	numUses?: number;
 	price: number;
+	rarity: Rarity;
 	effect: Effect;
 }
 
+/** The rarity of the items, how commonly they appear in the shop */
+export type Rarity = 'Common' | 'Uncommon' | 'Rare' | 'Legendary';
+
+/** The stat that the item effects */
 export type AffectedStats = 'Attack' | 'Defend' | 'Range';
+/** the type of effect */
 export type EffectType = 'additive' | 'multiplicative';
 
+/** The effected stat, type, and volume of the change */
 export interface Effect {
 	stat: AffectedStats;
 	type: EffectType;
@@ -48,5 +56,5 @@ export interface ClientResponse {
 	player?: Player;
 	allPlayers?: Player[];
 	deadPlayers?: Player[];
-	item?: Item;
+	items?: Item[];
 }

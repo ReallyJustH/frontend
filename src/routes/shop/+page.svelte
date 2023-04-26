@@ -25,19 +25,6 @@
 					<h1 class="text-4xl text-white text-style">Shop</h1>
 				</div>
 			</div>
-			<!-- <div
-				class="p-8 m-16 border-4 border-black rounded-xl hover:border-cyan-400"
-				on:click={() => {
-					SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
-					SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName);
-				}}
-				on:keypress={() => {
-					SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
-					SendMessage($connection, 'CLIENT$$' + $id + '$$shop' + itemName);
-				}}
-			>
-				this is an item trust me
-			</div> -->
 			<div
 				class=" whitespace-nowrap overflow-y-hidden overflow-x-scroll w-[330px] inline-flex scrollbar-hide relative translate-x-[15px]"
 			>
@@ -149,7 +136,17 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #631D73  ;"
 				>
-					<h1 class="text-4xl text-white text-style">Reroll</h1>
+					<h1
+						class="text-4xl text-white text-style"
+						on:click={() => {
+							SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
+						}}
+						on:keypress={() => {
+							SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
+						}}
+					>
+						Reroll
+					</h1>
 				</div>
 			</button>
 

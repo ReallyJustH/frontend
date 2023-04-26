@@ -4,8 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .box {
 	background-image: radial-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 0);
 	background-size: 14px 14px;
