@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { id, thisPlayer, allPlayers, connection, targetPlayer } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, targetPlayer, pageName } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import type { PlayerStance } from './types';
 	import { goto } from '$app/navigation';
@@ -11,6 +11,7 @@
 			<button
 				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
 				on:click={() => {
+					$pageName = 'move';
 					goto('stance');
 				}}
 			>
@@ -27,6 +28,7 @@
 						<button
 							class="border-2 border-black w-[300px] p-2 outer mb-2 mt-8 bg-white"
 							on:click={() => {
+								$pageName = 'move';
 								$targetPlayer = player;
 								goto('stance');
 							}}

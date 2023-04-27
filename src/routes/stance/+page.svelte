@@ -69,7 +69,7 @@
 					src="assets/images/pow.png"
 					alt="Kapow!"
 					class={showAtk ? atkImg : atkImgHidden}
-					style="width: 125px; height: 100px;"
+					style="width: 100px; height: 75px;"
 				/>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
@@ -94,7 +94,7 @@
 					src="assets/images/pow.png"
 					alt="Kapow!"
 					class={showDef ? defendImg : defendImgHidden}
-					style="width: 125px; height: 100px;"
+					style="width: 100px; height: 75px;"
 				/>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
@@ -119,7 +119,7 @@
 					src="assets/images/pow.png"
 					alt="Kapow!"
 					class={showAct ? actImg : actImgHidden}
-					style="width: 125px; height: 100px;"
+					style="width: 100px; height: 75px;"
 				/>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
