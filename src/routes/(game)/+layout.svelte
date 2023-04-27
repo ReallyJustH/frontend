@@ -21,16 +21,19 @@
 			}
 			if (parsedMessage.serverMessage === 'allPlayers') {
 				allPlayers.set(parsedMessage.allPlayers!);
-				$allPlayers.forEach((player) => {
+				$allPlayers.map((player) => {
 					if (player.id === $id) {
-						thisPlayer.set(player);
+						thisPlayer.update((thisplayer) => (thisplayer = player));
+						if ($thisPlayer.playerAlive === false) {
+							clientDie();
+						}
 						console.log('printing player after thisPlayer is set: ' + player.id);
 					}
 				});
 			}
 			if (parsedMessage.serverMessage === 'playerDeath') {
 				deadPlayers.set(parsedMessage.deadPlayers!);
-				$deadPlayers.forEach((player) => {
+				$deadPlayers.map((player) => {
 					console.log('this player is dead: ' + player.id);
 					if (player.id === $id) {
 						// thisPlayer.set(player);
