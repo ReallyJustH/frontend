@@ -65,7 +65,6 @@
 					</h1>
 				</div>
 			</button>
-
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
 				on:click={() => {

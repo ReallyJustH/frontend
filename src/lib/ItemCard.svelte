@@ -2,6 +2,7 @@
 	import { SendMessage } from '$lib/utils';
 	import { id, thisPlayer, allPlayers, connection, shopItems } from '$lib/stores';
 	import type { Rarity, Effect } from './types';
+	import { page } from '$app/stores';
 
 	export let itemName: string;
 	export let itemDescription: string;
@@ -41,23 +42,24 @@
 	<div class="flex flex-row w-full items-center justify-between my-1">
 		<h1 class="text-2xl text-white text-style">Uses: {numUses}</h1>
 	</div>
-
-	<button
-		class=" box border-2 border-black flex justify-center p-1 w-full h-[50px] self-end"
-		style="background-color: #631D73 ;"
-	>
-		<h1
-			class="text-4xl text-white text-style"
-			on:click={() => {
-				SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
-				shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
-			}}
-			on:keypress={() => {
-				SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
-				shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
-			}}
+	{#if $page.url.pathname === '/marketplace-melee/shop'}
+		<button
+			class=" box border-2 border-black flex justify-center p-1 w-full h-[50px] self-end"
+			style="background-color: #631D73 ;"
 		>
-			Buy
-		</h1>
-	</button>
+			<h1
+				class="text-4xl text-white text-style"
+				on:click={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
+					shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
+				}}
+				on:keypress={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
+					shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
+				}}
+			>
+				Buy
+			</h1>
+		</button>
+	{/if}
 </div>
