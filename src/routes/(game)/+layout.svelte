@@ -3,18 +3,10 @@
 	import type { ClientResponse, Player } from '$lib/types';
 	import { Connect, ParseServerMessage, clientDie } from '$lib/utils';
 	import { id, thisPlayer, allPlayers, connection, deadPlayers, shopItems } from '$lib/stores';
-	// import { goto } from '$app/navigation';
-	// import { base } from '$app/paths';
 
 	let parsedMessages: ClientResponse[] = [];
 
 	let clientId: string = '';
-	// let clientAlive: boolean = true;
-
-	// function checkIfClientAlive(element: Player, _index: number, _array: Player[]) {
-	// 	// ({ element.id, playerAlive }) => id === clientId && playerAlive === false
-	// 	if (element.id === clientId && element.playerAlive === false) clientAlive = false;
-	// }
 
 	if (browser) {
 		$connection = Connect();

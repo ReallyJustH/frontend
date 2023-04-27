@@ -137,7 +137,7 @@
 						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
 						SendMessage(
 							$connection,
-							'CLIENT$$' + $id + '$$declareStance$$' + stance + '$$' + targetPlayer
+							'CLIENT$$' + $id + '$$declareStance$$' + stance + '$$' + $targetPlayer.id
 						);
 					} else if (stance === 'Defend' || stance === 'Act') {
 						SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
