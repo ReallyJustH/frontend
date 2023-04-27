@@ -13,7 +13,7 @@
 </script>
 
 <div
-	class="border-2 border-black w-[300px] p-2 outer flex flex-col my-2 mr-4 whitespace-normal bg-white"
+	class="border-2 border-black min-w-[300px] min-h-[350px] p-2 outer flex flex-col my-2 mr-4 whitespace-normal bg-white"
 >
 	<h1 class="text-2xl text-white text-style self-start py-1">{itemName}</h1>
 	<div class="flex flex-row justify-end items-end snap-x">
