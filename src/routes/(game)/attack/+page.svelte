@@ -3,6 +3,7 @@
 	import { SendMessage } from '$lib/utils';
 	import type { PlayerStance } from './types';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 </script>
 
 <main class=" bg-gradient-to-b from-[#cf142b] to-white">
@@ -12,7 +13,7 @@
 				class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white"
 				on:click={() => {
 					$pageName = 'move';
-					goto('stance');
+					goto(`${base}/stance`);
 				}}
 			>
 				<div
@@ -30,7 +31,7 @@
 							on:click={() => {
 								$pageName = 'move';
 								$targetPlayer = player;
-								goto('stance');
+								goto(`${base}/stance`);
 							}}
 						>
 							<div

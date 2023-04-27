@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import InfoMenu from '$lib/InfoMenu.svelte';
 	import PlayerStats from '$lib/PlayerStats.svelte';
+	import { base } from '$app/paths';
 
 	let info: boolean = false;
 
@@ -44,7 +45,7 @@
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
 				on:click={() => {
-					goto('stance');
+					goto(`${base}/stance`);
 				}}
 			>
 				<div
@@ -59,7 +60,7 @@
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
 				on:click={() => {
 					$pageName = 'move';
-					goto('inventory');
+					goto(`${base}/inventory`);
 				}}
 			>
 				<div

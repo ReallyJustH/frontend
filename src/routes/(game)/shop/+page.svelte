@@ -5,6 +5,7 @@
 	import ItemCard from '$lib/ItemCard.svelte';
 	import PlayerStats from '$lib/PlayerStats.svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	/** the name of the item being purchased */
 	let itemName: string;
@@ -95,7 +96,7 @@
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
 				on:click={() => {
 					$pageName = 'shop';
-					goto('inventory');
+					goto(`${base}/inventory`);
 				}}
 			>
 				<div

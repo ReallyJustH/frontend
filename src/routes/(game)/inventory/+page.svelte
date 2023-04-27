@@ -1,6 +1,7 @@
 <script>
 	import { id, thisPlayer, allPlayers, connection, pageName } from '$lib/stores';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 </script>
 
 <main class=" bg-gradient-to-b from-[#D9D9D9] to-white h-screen">
@@ -17,7 +18,7 @@
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md"
 				on:click={() => {
-					goto($pageName);
+					goto(`${base}/` + $pageName);
 				}}
 			>
 				<div

@@ -5,6 +5,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import PlayerStats from '$lib/PlayerStats.svelte';
+	import { base } from '$app/paths';
 
 	export let stance: PlayerStance = null;
 
@@ -48,7 +49,7 @@
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md"
 				on:click={() => {
-					goto($pageName);
+					goto(`${base}/move`);
 				}}
 			>
 				<div
