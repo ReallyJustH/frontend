@@ -5,9 +5,9 @@
 		show = show ? false : true;
 	}
 
-	let hidden: string = 'bg-black top-0 left-0 hidden z-20 w-full h-full';
+	let hidden: string = 'bg-black top-0 left-0 hidden z-20 w-full h-min-screen h-full';
 	let loading: string =
-		'bg-black/50 top-0 left-0 absolute block z-20 w-full h-full flex items-center justify-center';
+		'bg-black/50 top-0 left-0 absolute block z-20 w-full h-full flex h-min-screen items-center justify-center';
 </script>
 
 <div class={show ? loading : hidden}>

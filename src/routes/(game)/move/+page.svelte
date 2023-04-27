@@ -26,10 +26,7 @@
 				</div>
 			</div>
 
-			<button
-				class="border-2 border-black w-[300px] px-2 outer my-3 bg-white"
-				on:click={toggleInfo}
-			>
+			<button class="border-2 border-black w-[300px] px-2 outer my-3 bg-white">
 				<div class="flex flex-row">
 					<div
 						class=" box border-2 border-black flex justify-center p-1 mt-2 mr-2 w-full"
@@ -37,9 +34,11 @@
 					>
 						<h1 class="text-4xl text-white text-style">2011</h1>
 					</div>
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div
 						class=" box border-2 border-black flex justify-center p-1 mt-2 w-full"
 						style="background-color:#205295 ;"
+						on:click={toggleInfo}
 					>
 						<h1 class="text-4xl text-white text-style">2011</h1>
 					</div>

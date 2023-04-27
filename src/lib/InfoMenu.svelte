@@ -7,9 +7,9 @@
 		infoState = infoState ? false : true;
 	}
 
-	let info_hidden: string = 'bg-black top-0 left-0 hidden z-10 w-full h-full';
+	let info_hidden: string = 'bg-black top-0 left-0 hidden z-10 w-full h-min-screen h-full';
 	let info_shown: string =
-		'bg-black/50 top-0 left-0 absolute block z-10 w-full h-full flex items-center justify-center';
+		'bg-black/50 top-0 left-0 absolute block z-10 w-full h-min-screen h-full flex items-center justify-center';
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
