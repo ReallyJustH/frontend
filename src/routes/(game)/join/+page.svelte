@@ -5,9 +5,9 @@
 </script>
 
 <main class=" bg-gradient-to-b from-[#205295] to-white h-screen">
-	<div class="box z-10 h-[100%]">
-		<div class="flex flex-col justify-center w-full items-center p-4 my-2 h-[100%]" style="">
-			<div class="flex flex-col flex-wrap justify-between items-center my-2">
+	<div class="box z-10 h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 my-2 h-full">
+			<div class="flex flex-col flex-wrap justify-between items-center my-2 h-full">
 				{#if $allPlayers?.length > 0}
 					{#each $allPlayers as player}
 						<PlayerCard id={player.id} value={player.value} />

@@ -42,8 +42,8 @@
 </script>
 
 <main class=" bg-gradient-to-b from-[#FFB637] to-white">
-	<div class="box z-10">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-screen my-2">
+	<div class="box z-10 h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 h-full my-2">
 			<PlayerStats />
 
 			<button
