@@ -39,9 +39,11 @@
 	<div class="flex flex-row w-full items-center justify-between my-1">
 		<h1 class="text-2xl text-white text-style">Cost: {itemPrice}</h1>
 	</div>
-	<div class="flex flex-row w-full items-center justify-between my-1">
-		<h1 class="text-2xl text-white text-style">Uses: {numUses}</h1>
-	</div>
+	{#if isConsumable}
+		<div class="flex flex-row w-full items-center justify-between my-1">
+			<h1 class="text-2xl text-white text-style">Uses: {numUses}</h1>
+		</div>
+	{/if}
 	{#if $page.url.pathname === '/marketplace-melee/shop'}
 		<button
 			class=" box border-2 border-black flex justify-center p-1 w-full h-[50px] self-end"
