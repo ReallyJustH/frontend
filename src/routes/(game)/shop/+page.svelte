@@ -49,7 +49,7 @@
 
 			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md">
 				<div
-					class=" box border-2 border-black flex justify-center p-1"
+					class=" box border-2 border-black flex justify-center p-1 items-center"
 					style="background-color: #631D73  ;"
 				>
 					<h1
@@ -61,7 +61,7 @@
 							SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
 						}}
 					>
-						Reroll
+						Reroll <span class="text-2xl">(5 value)</span>
 					</h1>
 				</div>
 			</button>

@@ -30,13 +30,24 @@
 				class="border-2 border-black w-[300px] px-2 outer my-3 bg-white"
 				on:click={toggleInfo}
 			>
-				<div
-					class=" box border-2 border-black flex justify-center p-1 mt-2"
-					style="background-color:#205295 ;"
-				>
-					<h1 class="text-4xl text-white text-style">2011</h1>
+				<div class="flex flex-row">
+					<div
+						class=" box border-2 border-black flex justify-center p-1 mt-2 mr-2 w-full"
+						style="background-color:#205295 ;"
+					>
+						<h1 class="text-4xl text-white text-style">2011</h1>
+					</div>
+					<div
+						class=" box border-2 border-black flex justify-center p-1 mt-2 w-full"
+						style="background-color:#205295 ;"
+					>
+						<h1 class="text-4xl text-white text-style">2011</h1>
+					</div>
 				</div>
-				<h2 class="text-style text-white text-4xl text-center mb-1">Current Year</h2>
+				<div class="flex flex-row">
+					<h1 class="text-4xl text-style text-white w-full mr-2">Decay</h1>
+					<h1 class="text-4xl text-style text-white w-full">Year</h1>
+				</div>
 			</button>
 
 			<PlayerStats />
