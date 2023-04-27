@@ -42,19 +42,6 @@
 			<PlayerStats />
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<button
-				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
-				on:click={() => {
-					goto(`${base}/stance`);
-				}}
-			>
-				<div
-					class=" box border-2 border-black flex justify-center p-1"
-					style="background-color:#205295 ;"
-				>
-					<h1 class="text-4xl text-white text-style">Stance</h1>
-				</div>
-			</button>
 
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
@@ -68,6 +55,19 @@
 					style="background-color: #D9D9D9 ;"
 				>
 					<h1 class="text-4xl text-white text-style">Inventory</h1>
+				</div>
+			</button>
+			<button
+				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"
+				on:click={() => {
+					goto(`${base}/stance`);
+				}}
+			>
+				<div
+					class=" box border-2 border-black flex justify-center p-1"
+					style="background-color:#205295 ;"
+				>
+					<h1 class="text-4xl text-white text-style">Stance</h1>
 				</div>
 			</button>
 		</div>
