@@ -41,9 +41,9 @@
 	let atkImgHidden: string = 'hidden';
 </script>
 
-<main class=" bg-gradient-to-b from-[#FFB637] to-white">
-	<div class="box z-10 h-full">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-full my-2">
+<main class=" bg-gradient-to-b from-[#FFB637] to-white min-h-screen">
+	<div class="box z-10 min-h-screen h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 min-h-screen h-full my-2">
 			<PlayerStats />
 
 			<button

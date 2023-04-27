@@ -14,9 +14,9 @@
 </script>
 
 <InfoMenu infoState={info} />
-<main class=" bg-gradient-to-b from-[#205295] to-white">
-	<div class="box z-10 h-[100%]">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-[100%]">
+<main class=" bg-gradient-to-b from-[#205295] to-white min-h-screen">
+	<div class="box z-10 min-h-screen h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 min-h-screen h-full">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
 				<div
 					class=" box border-2 border-black flex justify-center p-1"

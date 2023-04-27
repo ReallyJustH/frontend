@@ -18,9 +18,9 @@
 </script>
 
 <LoadingPopUp show={loading} />
-<main class=" bg-gradient-to-b from-[#631D73] to-white">
-	<div class="box z-10 h-full">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-full z-20">
+<main class=" bg-gradient-to-b from-[#631D73] to-white min-h-screen">
+	<div class="box z-10 min-h-screen h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 min-h-screen h-full z-20">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-4 bg-white">
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
@@ -65,32 +65,6 @@
 					</h1>
 				</div>
 			</button>
-
-			<div
-				class="border-2 border-black w-[300px] p-2 outer my-2 flex flex-row items-center bg-white"
-			>
-				<div class="border-2 border-black w-[45px] h-[45px] mx-2" />
-				<p class="box-text text-black mr-2">Cost: 5 Value | Atk + 5</p>
-				<div
-					class=" box border-2 border-black flex justify-center p-1 w-[65px] h-[40px] items-center"
-					style="background-color: #D9D9D9  ;"
-				>
-					<h1 class="text-3xl text-white text-style">Buy</h1>
-				</div>
-			</div>
-
-			<div
-				class="border-2 border-black w-[300px] p-2 outer my-2 flex flex-row items-center bg-white"
-			>
-				<div class="border-2 border-black w-[45px] h-[45px] mx-2" />
-				<p class="box-text text-black mr-2">Cost: 5 Value | Atk + 5</p>
-				<div
-					class=" box border-2 border-black flex justify-center p-1 w-[65px] h-[40px] items-center"
-					style="background-color: #D9D9D9  ;"
-				>
-					<h1 class="text-3xl text-white text-style">Buy</h1>
-				</div>
-			</div>
 
 			<button
 				class="border-2 border-black w-[300px] p-2 outer my-3 bg-white rounded-md"

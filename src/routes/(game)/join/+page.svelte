@@ -4,9 +4,9 @@
 	import { SendMessage } from '$lib/utils';
 </script>
 
-<main class=" bg-gradient-to-b from-[#205295] to-white">
-	<div class="box z-10 h-full">
-		<div class="flex flex-col justify-center w-full items-center p-4 my-2 h-full">
+<main class=" bg-gradient-to-b from-[#205295] to-white min-h-screen">
+	<div class="box z-10 min-h-screen h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 my-2 min-h-screen h-full">
 			<div class="flex flex-col flex-wrap justify-between items-center my-2">
 				{#if $allPlayers?.length > 0}
 					{#each $allPlayers as player}

@@ -5,9 +5,9 @@
 	import ItemCard from '$lib/ItemCard.svelte';
 </script>
 
-<main class=" bg-gradient-to-b from-[#D9D9D9] to-white">
-	<div class="box z-10 h-full">
-		<div class="flex flex-col justify-center w-full items-center p-4 h-full">
+<main class=" bg-gradient-to-b from-[#D9D9D9] to-white min-h-screen">
+	<div class="box z-10 min-h-screen h-full">
+		<div class="flex flex-col justify-center w-full items-center p-4 min-h-screen h-full">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white rounded-md">
 				<div
 					class=" box border-2 border-black flex justify-center p-1 relative"
