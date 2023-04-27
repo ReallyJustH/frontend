@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { SendMessage } from '$lib/utils';
-	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, shopItems } from '$lib/stores';
 	import type { Rarity, Effect } from './types';
 
 	export let itemName: string;
@@ -50,9 +50,11 @@
 			class="text-4xl text-white text-style"
 			on:click={() => {
 				SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
+				shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
 			}}
 			on:keypress={() => {
 				SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
+				shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
 			}}
 		>
 			Buy
