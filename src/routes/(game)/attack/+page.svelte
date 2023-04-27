@@ -30,7 +30,7 @@
 							class="border-2 border-black w-[300px] p-2 outer mb-2 mt-8 bg-white"
 							on:click={() => {
 								$pageName = 'move';
-								$targetPlayer = player;
+								targetPlayer.set(player);
 								goto(`${base}/stance`);
 							}}
 						>

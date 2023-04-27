@@ -73,5 +73,7 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
 			// TODO show a leaderboard page? just move to next turn? not sure
 			goto(`${base}/event`);
 			return { serverMessage: messageData[1] };
+		default:
+			return { serverMessage: messageData[0] }
 	}
 }
