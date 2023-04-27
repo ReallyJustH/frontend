@@ -15,9 +15,9 @@
 <div
 	class="border-2 border-black w-[300px] p-2 outer flex flex-col my-2 mr-4 whitespace-normal bg-white"
 >
-	<h1 class="text-2xl text-white text-style self-start py-1">{itemRarity}</h1>
+	<h1 class="text-2xl text-white text-style self-start py-1">{itemName}</h1>
 	<div class="flex flex-row justify-end items-end snap-x">
-		<div class="border-2 border-black w-[140px] h-[140px] mr-2" />
+		<img src={itemName.toLowerCase() + '.png'} alt="Should be an Item lmao" />
 		<div
 			class=" box border-2 border-black flex justify-center p-1 w-[125px] h-[50px]"
 			style="background-color: #CC2C2C;"
@@ -25,7 +25,7 @@
 			<h1 class="text-3xl text-white text-style">{itemEffect.type}{itemEffect?.amount}</h1>
 		</div>
 	</div>
-	<h1 class="text-2xl text-white text-style self-start py-1">{itemName}</h1>
+	<h1 class="text-2xl text-white text-style self-start py-1">{itemRarity}</h1>
 	<div class=" border-2 border-black flex p-1" style="background-color: #D9D9D9;">
 		<p class="box-text flex-grow">
 			{itemDescription}
