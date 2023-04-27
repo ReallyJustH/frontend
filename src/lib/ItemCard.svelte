@@ -17,7 +17,7 @@
 >
 	<h1 class="text-2xl text-white text-style self-start py-1">{itemName}</h1>
 	<div class="flex flex-row justify-end items-end snap-x">
-		<img src={'assets/images/' + itemName.toLowerCase() + '.png'} alt="Should be an Item lmao" />
+		<img src={'assets/icons/' + itemName.toLowerCase() + '.png'} alt="Should be an Item lmao" />
 		<div
 			class=" box border-2 border-black flex justify-center p-1 w-[125px] h-[50px]"
 			style="background-color: #CC2C2C;"
