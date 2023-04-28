@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { SendMessage } from '$lib/utils';
-	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, yearlyEvent } from '$lib/stores';
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 </script>
@@ -21,7 +21,11 @@
 					class=" box border-2 border-black flex justify-center p-1 text-center"
 					style="background-color: #D9D9D9  ;"
 				>
-					<p class="text-style text-white text-3xl">A fun and historically informative event.</p>
+					<p class="text-style text-white text-3xl">
+						{#if $yearlyEvent != null}
+							{$yearlyEvent.description}
+						{/if}
+					</p>
 				</div>
 			</div>
 

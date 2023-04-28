@@ -2,7 +2,15 @@
 	import { browser } from '$app/environment';
 	import type { ClientResponse, Player } from '$lib/types';
 	import { Connect, ParseServerMessage, clientDie } from '$lib/utils';
-	import { id, thisPlayer, allPlayers, connection, deadPlayers, shopItems } from '$lib/stores';
+	import {
+		id,
+		thisPlayer,
+		allPlayers,
+		connection,
+		deadPlayers,
+		shopItems,
+		yearlyEvent
+	} from '$lib/stores';
 
 	let parsedMessages: ClientResponse[] = [];
 
@@ -45,6 +53,11 @@
 				console.log('layout recieved serverMessage shopItems');
 				shopItems.set(parsedMessage.items!);
 				console.log($shopItems);
+			}
+			if (parsedMessage.serverMessage === 'event') {
+				console.log('layout recieved serverMessage event');
+				yearlyEvent.set(parsedMessage.yearlyEvent!);
+				console.log($yearlyEvent);
 			}
 			parsedMessages.push(parsedMessage);
 			parsedMessages = parsedMessages;

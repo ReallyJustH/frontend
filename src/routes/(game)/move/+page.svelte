@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { id, thisPlayer, allPlayers, connection, pageName } from '$lib/stores';
+	import { id, thisPlayer, allPlayers, connection, pageName, yearlyEvent } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';
 	import { goto } from '$app/navigation';
 	import InfoMenu from '$lib/InfoMenu.svelte';
@@ -26,13 +26,13 @@
 				</div>
 			</div>
 
-			<div class="border-2 border-black w-[300px] px-2 outer my-3 bg-white">
+			<div class="border-2 border-black w-[300px] px-2 outer my-3 bg-white text-center">
 				<div class="flex flex-row">
 					<div
 						class=" box border-2 border-black flex justify-center p-1 mt-2 mr-2 w-full"
 						style="background-color:#205295 ;"
 					>
-						<h1 class="text-4xl text-white text-style">2011</h1>
+						<h1 class="text-4xl text-white text-style">{$yearlyEvent.decay}</h1>
 					</div>
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<button
@@ -40,7 +40,7 @@
 						style="background-color:#205295 ;"
 						on:click={toggleInfo}
 					>
-						<h1 class="text-4xl text-white text-style">2011</h1>
+						<h1 class="text-4xl text-white text-style">{$yearlyEvent.year}</h1>
 					</button>
 				</div>
 				<div class="flex flex-row">

@@ -51,12 +51,13 @@ export interface Player {
 	playerAlive: boolean;
 }
 
-export interface Event {
+export interface yearlyEvent {
 	year: number;
 	description: string;
 	direction: "positive" | "negative";
 	amount: number;
 	turn: number;
+	decay: number;
 }
 
 export interface ClientResponse {
@@ -66,5 +67,5 @@ export interface ClientResponse {
 	allPlayers?: Player[];
 	deadPlayers?: Player[];
 	items?: Item[];
-	event?: Event;
+	yearlyEvent?: yearlyEvent;
 }
