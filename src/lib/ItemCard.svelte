@@ -48,24 +48,20 @@
 		<button
 			class=" box border-2 border-black flex justify-center p-1 w-full h-[50px] self-end"
 			style="background-color: #631D73 ;"
+			on:click={() => {
+				if ($thisPlayer.value > itemPrice) {
+					shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
+				}
+				SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
+			}}
+			on:keypress={() => {
+				if ($thisPlayer.value > itemPrice) {
+					shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
+				}
+				SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
+			}}
 		>
-			<h1
-				class="text-4xl text-white text-style"
-				on:click={() => {
-					if ($thisPlayer.value > itemPrice) {
-						shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
-					}
-					SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
-				}}
-				on:keypress={() => {
-					if ($thisPlayer.value > itemPrice) {
-						shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
-					}
-					SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
-				}}
-			>
-				Buy
-			</h1>
+			<h1 class="text-4xl text-white text-style">Buy</h1>
 		</button>
 	{/if}
 </div>

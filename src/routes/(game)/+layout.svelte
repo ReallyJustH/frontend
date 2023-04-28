@@ -58,21 +58,4 @@
 
 <svelte:window on:beforeunload={beforeUnload} />
 
-<div id="debug" class="absolute right-0 top-0 p-6 border-2 border-red-800">
-	This Player
-	<br />
-	{#if $thisPlayer !== null}
-		<div>{$thisPlayer?.id}</div>
-		<div>readyState: {$thisPlayer?.readyState}</div>
-	{/if}
-	<br />
-	All Players
-	<br />
-	{#if $allPlayers?.length > 0}
-		{#each $allPlayers as player}
-			<div>{player.id}</div>
-		{/each}
-	{/if}
-</div>
-
 <slot />

@@ -17,8 +17,8 @@
 	}
 </script>
 
-<LoadingPopUp show={loading} />
-<main class=" bg-gradient-to-b from-[#631D73] to-white min-h-screen">
+<main class=" bg-gradient-to-b from-[#631D73] to-white min-h-screen relative">
+	<LoadingPopUp show={loading} />
 	<div class="box z-10 min-h-screen h-full">
 		<div class="flex flex-col justify-center w-full items-center p-4 min-h-screen h-full z-20">
 			<div class="border-2 border-black w-[300px] p-2 outer mb-4 bg-white">
@@ -47,20 +47,20 @@
 				{/if}
 			</div>
 
-			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md">
+			<button
+				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md"
+				on:click={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
+				}}
+				on:keypress={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
+				}}
+			>
 				<div
 					class=" box border-2 border-black flex justify-center p-1 items-center"
 					style="background-color: #631D73  ;"
 				>
-					<h1
-						class="text-4xl text-white text-style"
-						on:click={() => {
-							SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
-						}}
-						on:keypress={() => {
-							SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
-						}}
-					>
+					<h1 class="text-4xl text-white text-style">
 						Reroll <span class="text-2xl">(5 value)</span>
 					</h1>
 				</div>
@@ -80,26 +80,24 @@
 				</div>
 			</button>
 
-			<button class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md">
+			<button
+				class="border-2 border-black w-[300px] p-2 outer my-2 bg-white rounded-md"
+				on:click={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+					toggleLoading();
+					SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
+				}}
+				on:keypress={() => {
+					SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
+					toggleLoading();
+					SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
+				}}
+			>
 				<div
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #205295  ;"
 				>
-					<h1
-						class="text-4xl text-white text-style"
-						on:click={() => {
-							SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
-							toggleLoading();
-							SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
-						}}
-						on:keypress={() => {
-							SendMessage($connection, 'CLIENT$$' + $id + '$$ready');
-							toggleLoading();
-							SendMessage($connection, 'CLIENT$$' + $id + '$$doneShopping');
-						}}
-					>
-						done shopping
-					</h1>
+					<h1 class="text-4xl text-white text-style">done shopping</h1>
 				</div>
 			</button>
 		</div>
