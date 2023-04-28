@@ -51,7 +51,7 @@ export interface Player {
 	playerAlive: boolean;
 }
 
-export interface yearlyEvent {
+export interface YearlyEvent {
 	year: number;
 	description: string;
 	direction: "positive" | "negative";
@@ -67,5 +67,5 @@ export interface ClientResponse {
 	allPlayers?: Player[];
 	deadPlayers?: Player[];
 	items?: Item[];
-	yearlyEvent?: yearlyEvent;
+	yearlyEvent?: YearlyEvent;
 }
