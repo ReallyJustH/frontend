@@ -52,6 +52,10 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
 			console.log(messageData[2]);
 			console.log(JSON.parse(messageData[2]));
 			return { serverMessage: messageData[1], deadPlayers: <Player[]>JSON.parse(messageData[2]) };
+		case 'event':
+			console.log(messageData[2]);
+			console.log(JSON.parse(messageData[2]));
+			return { serverMessage: messageData[1], event: <Event>JSON.parse(messageData[2]) };
 		case 'gameCreated':
 			return { serverMessage: messageData[1] };
 		case 'gameEvent':

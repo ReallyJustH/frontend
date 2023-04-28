@@ -52,12 +52,16 @@
 			<h1
 				class="text-4xl text-white text-style"
 				on:click={() => {
+					if ($thisPlayer.value > itemPrice) {
+						shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
+					}
 					SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
-					shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
 				}}
 				on:keypress={() => {
-					SendMessage($connection, 'CLIENT$$' + $id + '$$requestNewItems');
-					shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
+					if ($thisPlayer.value > itemPrice) {
+						shopItems.update(() => $shopItems.filter((item) => !(item.name === itemName)));
+					}
+					SendMessage($connection, 'CLIENT$$' + $id + '$$shop$$' + itemName);
 				}}
 			>
 				Buy

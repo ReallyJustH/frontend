@@ -4,6 +4,7 @@ export type MessageFromServer =
 	| 'allPlayers'
 	| 'playerDeath'
 	| 'shopItems'
+	| 'event'
 	| 'gameCreated'
 	| 'gameEvent'
 	| 'gameCalculate'
@@ -50,6 +51,14 @@ export interface Player {
 	playerAlive: boolean;
 }
 
+export interface Event {
+	year: number;
+	description: string;
+	direction: "positive" | "negative";
+	amount: number;
+	turn: number;
+}
+
 export interface ClientResponse {
 	serverMessage: MessageFromServer;
 	clientId?: string;
@@ -57,4 +66,5 @@ export interface ClientResponse {
 	allPlayers?: Player[];
 	deadPlayers?: Player[];
 	items?: Item[];
+	event?: Event;
 }
