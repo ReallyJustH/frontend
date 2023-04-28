@@ -24,6 +24,8 @@
 					<p class="text-style text-white text-3xl">
 						{#if $yearlyEvent != null}
 							{$yearlyEvent.description}
+							<br />
+							Value : {$yearlyEvent.amount}
 						{/if}
 					</p>
 				</div>
