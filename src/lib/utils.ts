@@ -1,5 +1,5 @@
 import { goto } from '$app/navigation';
-import type { ClientResponse, MessageFromServer, Player } from './types';
+import type { ClientResponse, MessageFromServer, Player, YearlyEvent } from './types';
 import { base } from '$app/paths';
 import type Item from './types';
 
@@ -55,7 +55,7 @@ export function ParseServerMessage(message: MessageEvent): ClientResponse {
 		case 'event':
 			console.log(messageData[2]);
 			console.log(JSON.parse(messageData[2]));
-			return { serverMessage: messageData[1], event: <Event>JSON.parse(messageData[2]) };
+			return { serverMessage: messageData[1], yearlyEvent: <YearlyEvent>JSON.parse(messageData[2]) };
 		case 'gameCreated':
 			return { serverMessage: messageData[1] };
 		case 'gameEvent':
