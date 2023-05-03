@@ -1,3 +1,7 @@
+ <svelte:head>
+<title>Stance Page</title>
+</svelte:head>
+
 <script lang="ts">
 	import { id, thisPlayer, allPlayers, connection, targetPlayer, pageName } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';

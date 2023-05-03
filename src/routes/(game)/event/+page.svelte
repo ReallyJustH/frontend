@@ -1,3 +1,7 @@
+ <svelte:head>
+<title>Event Page</title>
+</svelte:head>
+
 <script lang="ts">
 	import { SendMessage } from '$lib/utils';
 	import { id, thisPlayer, allPlayers, connection, yearlyEvent } from '$lib/stores';

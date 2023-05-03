@@ -1,3 +1,7 @@
+ <svelte:head>
+<title>Victory Page</title>
+</svelte:head>
+
 <script lang="ts">
 	import PlayerCard from '$lib/PlayerCard.svelte';
 	import { id, thisPlayer, allPlayers, connection } from '$lib/stores';

@@ -1,3 +1,7 @@
+ <svelte:head>
+<title>Objectives Page</title>
+</svelte:head>
+
 <script lang="ts">
 	import { id, thisPlayer, allPlayers, connection, targetPlayer } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';

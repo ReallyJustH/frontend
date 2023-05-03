@@ -1,3 +1,7 @@
+ <svelte:head>
+<title>Move Page</title>
+</svelte:head>
+
 <script lang="ts">
 	import { id, thisPlayer, allPlayers, connection, pageName, yearlyEvent } from '$lib/stores';
 	import { SendMessage } from '$lib/utils';

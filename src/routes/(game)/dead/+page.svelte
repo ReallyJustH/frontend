@@ -1,3 +1,7 @@
+ <svelte:head>
+<title>Death Page</title>
+</svelte:head>
+
 <main class=" bg-gradient-to-b from-black to-gray-200 min-h-screen">
 	<div class="box z-10 min-h-screen h-full">
 		<div class="flex flex-col justify-center w-full items-center p-4 my-2 min-h-screen h-full">

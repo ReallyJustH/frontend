@@ -1,3 +1,7 @@
+ <svelte:head>
+<title>Inventory Page</title>
+</svelte:head>
+
 <script>
 	import { id, thisPlayer, allPlayers, connection, pageName } from '$lib/stores';
 	import { goto } from '$app/navigation';
