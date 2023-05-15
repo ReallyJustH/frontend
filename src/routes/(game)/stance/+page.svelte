@@ -60,7 +60,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #205295;"
 				>
-					<h1 class="text-4xl text-white text-style">Return</h1>
+					<p class="text-4xl text-white text-style">Return</p>
 				</div>
 			</button>
 
@@ -80,7 +80,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #cf142b ;"
 				>
-					<h1 class="text-4xl text-white text-style">Attack!</h1>
+					<p class="text-4xl text-white text-style">Attack!</p>
 				</div>
 			</button>
 
@@ -105,7 +105,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #39ADD1 ;"
 				>
-					<h1 class="text-4xl text-white text-style">Defend!</h1>
+					<p class="text-4xl text-white text-style">Defend!</p>
 				</div>
 			</button>
 
@@ -130,7 +130,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color:#FFB637 ;"
 				>
-					<h1 class="text-4xl text-white text-style">Act!</h1>
+					<p class="text-4xl text-white text-style">Act!</p>
 				</div>
 			</button>
 
@@ -153,7 +153,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #209525 ;"
 				>
-					<h1 class="text-4xl text-white text-style">Confirm Stance</h1>
+					<p class="text-4xl text-white text-style">Confirm Stance</p>
 				</div>
 			</button>
 		</div>

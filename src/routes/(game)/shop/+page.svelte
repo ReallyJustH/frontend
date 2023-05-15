@@ -64,9 +64,9 @@
 					class=" box border-2 border-black flex justify-center p-1 items-center"
 					style="background-color: #631D73  ;"
 				>
-					<h1 class="text-4xl text-white text-style">
+					<p class="text-4xl text-white text-style">
 						Reroll <span class="text-2xl">(5 value)</span>
-					</h1>
+					</p>
 				</div>
 			</button>
 			<button
@@ -80,7 +80,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #D9D9D9 ;"
 				>
-					<h1 class="text-4xl text-white text-style">Inventory</h1>
+					<p class="text-4xl text-white text-style">Inventory</p>
 				</div>
 			</button>
 
@@ -101,7 +101,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #205295  ;"
 				>
-					<h1 class="text-4xl text-white text-style">done shopping</h1>
+					<p class="text-4xl text-white text-style">done shopping</p>
 				</div>
 			</button>
 		</div>

@@ -17,7 +17,7 @@
 					class=" box border-2 border-black flex justify-center p-1 text-center"
 					style="background-color: #205295 ;"
 				>
-					<p class="text-style text-white text-4xl">Event</p>
+					<h1 class="text-style text-white text-4xl">Event</h1>
 				</div>
 			</div>
 			<div class="border-2 border-black w-[300px] p-2 outer mb-2 bg-white">
@@ -43,7 +43,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #D9D9D9 ;"
 				>
-					<h1 class="text-4xl text-white text-style">Done</h1>
+					<p class="text-4xl text-white text-style">Done</p>
 				</div>
 			</button>
 		</div>

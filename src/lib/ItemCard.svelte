@@ -20,7 +20,7 @@
 	<div class="flex flex-row justify-end items-end snap-x">
 		<img
 			src={'assets/icons/' + itemName.toLowerCase() + '.png'}
-			alt="Should be an Item lmao"
+			alt=""
 			class="w-[140px] h-[140px]"
 		/>
 		<div

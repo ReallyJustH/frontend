@@ -31,7 +31,7 @@
 					class=" box border border-black flex justify-center p-1"
 					style="background-color: #205295;"
 				>
-					<h1 class="text-4xl text-white text-style">Start Game</h1>
+					<p class="text-4xl text-white text-style">Start Game</p>
 				</div>
 			</button>
 		</div>

@@ -36,15 +36,15 @@
 						class=" box border-2 border-black flex justify-center p-1 mt-2 mr-2 w-full"
 						style="background-color:#205295 ;"
 					>
-						<h1 class="text-4xl text-white text-style">{$yearlyEvent.decay}</h1>
+						<p class="text-4xl text-white text-style">{$yearlyEvent.decay}</p>
 					</div>
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<button
+					<button role="dialog"
 						class=" box border-2 border-black flex justify-center p-1 mt-2 w-full"
 						style="background-color:#205295 ;"
 						on:click={toggleInfo}
 					>
-						<h1 class="text-4xl text-white text-style">{$yearlyEvent.year}</h1>
+						<p class="text-4xl text-white text-style">{$yearlyEvent.year}</p>
 					</button>
 				</div>
 				<div class="flex flex-row">
@@ -68,7 +68,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color: #D9D9D9 ;"
 				>
-					<h1 class="text-4xl text-white text-style">Inventory</h1>
+					<p class="text-4xl text-white text-style">Inventory</p>
 				</div>
 			</button>
 			<button
@@ -81,7 +81,7 @@
 					class=" box border-2 border-black flex justify-center p-1"
 					style="background-color:#205295 ;"
 				>
-					<h1 class="text-4xl text-white text-style">Stance</h1>
+					<p class="text-4xl text-white text-style">Stance</p>
 				</div>
 			</button>
 		</div>
